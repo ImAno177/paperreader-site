@@ -2,60 +2,73 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
+const baseUrl = base.endsWith('/') ? base : `${base}/`;
 const asset = (path) => `${base.replace(/\/$/, '')}/${path.replace(/^\/+/, '')}`;
 const repoUrl = 'https://github.com/ImAno177/PaperReader';
 
-const showcase = [
+const screens = [
   {
     title: 'Library',
-    detail: 'Four saved papers and reading filters.',
-    src: 'showcase/library.png',
-    alt: 'PaperReader library screen showing four saved papers and reading filters',
-    className: 'showcase-feature',
+    label: 'Saved papers · dark theme',
+    src: 'showcase/library-dark.png',
+    alt: 'PaperReader Library screen showing saved papers and reading filters in dark theme',
+    detail: 'Saved papers, reading filters, and local progress.',
+  },
+  {
+    title: 'Library',
+    label: 'Saved papers · light theme',
+    src: 'showcase/library-light.png',
+    alt: 'PaperReader Library screen showing saved papers in light theme',
+    detail: 'The same library in a light reading surface.',
   },
   {
     title: 'Search',
-    detail: 'A search field with recent paper searches.',
-    src: 'showcase/discover.png',
-    alt: 'PaperReader search screen showing recent paper searches',
-    className: 'showcase-small',
+    label: 'Recent searches · dark theme',
+    src: 'showcase/search-dark.png',
+    alt: 'PaperReader Search screen showing recent paper searches in dark theme',
+    detail: 'Recent searches remain available beside discovery.',
   },
   {
-    title: 'PDF reader',
-    detail: 'An offline PDF fidelity fallback for the long read.',
-    src: 'showcase/reader.png',
-    alt: 'PaperReader PDF reader screen showing an offline copy of Attention Is All You Need',
-    className: 'showcase-small',
+    title: 'Paper detail',
+    label: 'arXiv · Attention Is All You Need',
+    src: 'showcase/arxiv-detail-dark.png',
+    alt: 'PaperReader detail screen for Attention Is All You Need from arXiv',
+    detail: 'Metadata, abstract, versions, and reading actions.',
+  },
+  {
+    title: 'Mobile reader',
+    label: 'Attention Is All You Need · 0% read',
+    src: 'showcase/attention-mobile-dark.png',
+    alt: 'PaperReader mobile reader showing the beginning of Attention Is All You Need',
+    detail: 'Cached arXiv HTML with the paper title and abstract.',
+  },
+  {
+    title: 'Sources',
+    label: 'Unavailable provider states · dark theme',
+    src: 'showcase/sources-error-dark.png',
+    alt: 'PaperReader Sources screen showing unavailable provider states in dark theme',
+    detail: 'Provider failures stay visible and can be retried.',
   },
 ];
 
-const principles = [
-  {
-    quote: 'The paper stays readable after the network disappears.',
-    source: 'Local-first reader principle',
-  },
-  {
-    quote: 'Every result keeps the source that made it trustworthy.',
-    source: 'Provider and provenance principle',
-  },
-  {
-    quote: 'A document is a version, not a disposable web page.',
-    source: 'Exact-document annotation principle',
-  },
+const facts = [
+  ['Local library', 'Keep papers, history, and backups on the device.'],
+  ['Exact versions', 'Carry provenance from the result to the reading artifact.'],
+  ['Honest states', 'Show offline, unavailable, and loading states with recovery actions.'],
 ];
 ---
 
-<BaseLayout>
+<BaseLayout title="PaperReader · Read closer" description="An open-source Android reader for finding, saving, and reading scholarly papers locally.">
   <a class="skip-link" href="#content">Skip to content</a>
 
   <nav class="site-nav" aria-label="Primary navigation">
-    <a class="brand" href={`${base}#top`} aria-label="PaperReader Field Notes home">
+    <a class="brand" href={baseUrl}>
       <span class="brand-mark" aria-hidden="true">PR</span>
-      <span>PaperReader / Field Notes</span>
+      <span>PaperReader</span>
     </a>
     <div class="nav-links">
-      <a href={`${base}#system`}>The system</a>
-      <a href={`${base}#evidence`}>Evidence</a>
+      <a href={`${baseUrl}#screens`}>Screens</a>
+      <a href={`${baseUrl}docs/`}>Docs</a>
       <a class="nav-github" href={repoUrl} target="_blank" rel="noreferrer" aria-label="Open PaperReader on GitHub">
         GitHub
         <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
@@ -68,256 +81,121 @@ const principles = [
   <main id="content">
     <section id="top" class="site-shell hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">An open-source reading tool for serious papers</p>
-        <h1 id="hero-title">
-          Make research
-          <span
-            class="inline-shot"
-            aria-hidden="true"
-            style={`background-image: url('${asset('showcase/library.png')}')`}
-          ></span>
-          readable.
-        </h1>
+        <p class="eyebrow">Open-source Android reader</p>
+        <h1 id="hero-title">Keep the paper <span class="hero-highlight">close.</span></h1>
         <p class="hero-intro">
-          PaperReader is a local-first Android app for discovering, collecting, reading, and tracking
-          scientific papers without giving your library away.
+          PaperReader helps you find, save, and read scholarly papers without losing the source,
+          version, or local copy that made the paper useful.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href={`${base}#evidence`}>
-            See the real screens
+          <a class="button button-primary" href={`${baseUrl}#screens`}>
+            View the screens
             <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M3 8h9M8 3l5 5-5 5" />
             </svg>
           </a>
-          <a class="button button-secondary" href={repoUrl} target="_blank" rel="noreferrer">Open the repository</a>
+          <a class="button button-secondary" href={`${baseUrl}docs/`}>Read the docs</a>
         </div>
-        <p class="hero-note">Discovery, provenance, reading, backup: one local loop.</p>
+        <p class="hero-note">Discovery · provenance · reading · backup</p>
       </div>
 
-      <div class="hero-media" data-reveal>
-        <figure class="device-frame">
+      <div class="hero-media" aria-label="PaperReader screen preview" data-reveal>
+        <figure class="screen-frame hero-shot hero-shot-main">
           <img
-            class="device-screen"
-            src={asset('showcase/library.png')}
-            alt="PaperReader library screen captured on an Android emulator"
+            src={asset('showcase/library-dark.png')}
+            alt="PaperReader Library screen showing saved papers and reading filters in dark theme"
             width="1080"
             height="1920"
             fetchpriority="high"
             decoding="async"
           />
-          <figcaption class="capture-caption">
-            <span><span class="capture-dot" aria-hidden="true"></span>Captured on the API 36 emulator</span>
-            <span>PaperReader / Library</span>
-          </figcaption>
+          <figcaption>Library / dark theme</figcaption>
+        </figure>
+        <figure class="screen-frame hero-shot hero-shot-secondary">
+          <img
+            src={asset('showcase/arxiv-detail-dark.png')}
+            alt="PaperReader detail screen for Attention Is All You Need from arXiv"
+            width="1080"
+            height="1920"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Paper detail / arXiv</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="manifesto-section" aria-labelledby="manifesto-title">
-      <div class="site-shell">
-        <p class="section-kicker">The premise</p>
-        <p id="manifesto-title" class="manifesto" data-scrub-text>
-          <span class="reveal-word">Research</span>
-          <span class="reveal-word">gets</span>
-          <span class="reveal-word">better</span>
-          <span class="reveal-word">when</span>
-          <span class="reveal-word">the</span>
-          <span class="reveal-word">paper</span>
-          <span class="reveal-word">stays</span>
-          <span class="reveal-word">yours.</span>
-        </p>
-        <p class="manifesto-note">
-          A quieter product surface for work that is already difficult: finding the right paper,
-          keeping its provenance, and returning to the exact version you meant to read.
-        </p>
-      </div>
+    <section class="site-shell fact-strip" aria-label="Product facts">
+      {facts.map(([title, detail]) => (
+        <article class="fact-card" data-reveal>
+          <p class="section-kicker">{title}</p>
+          <p>{detail}</p>
+        </article>
+      ))}
     </section>
 
-    <section id="system" class="site-shell section" aria-labelledby="system-title">
+    <section id="screens" class="site-shell section" aria-labelledby="screens-title">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">What the system protects</p>
-          <h2 id="system-title">Small surfaces. Serious boundaries.</h2>
+          <p class="section-kicker">Product evidence</p>
+          <h2 id="screens-title">The app in use.</h2>
         </div>
         <p>
-          The visual language is tactile and direct, but the product rules stay deliberate: local
-          storage, exact document identity, honest provider state, and extensions outside the host.
+          Current PaperReader screens, labelled by destination and visible state. The selection keeps
+          the landing page short while the complete review ledger lives in the repository.
         </p>
       </div>
 
-      <div class="bento-grid">
-        <article class="bento-card bento-card-main">
-          <div>
-            <strong>Built for the long read</strong>
-            <h3>Keep the work close, even when the connection is gone.</h3>
-            <p>
-              PaperReader turns supported papers into selectable, searchable reading artifacts and keeps
-              the original PDF as a fidelity fallback.
-            </p>
-          </div>
-          <div class="card-mark" aria-hidden="true"></div>
-        </article>
-        <article class="bento-card card-local">
-          <strong>Local-first</strong>
-          <h3>Your library lives on the device.</h3>
-          <p>No account, analytics, advertising SDK, or cloud parser.</p>
-        </article>
-        <article class="bento-card card-reading">
-          <strong>Exact reading</strong>
-          <h3>Search, contents, highlights, notes.</h3>
-          <p>Annotations stay bound to the exact document version they came from.</p>
-        </article>
-        <article class="bento-card card-extensions">
-          <strong>Bounded extensions</strong>
-          <h3>Sources and themes can grow without owning the host.</h3>
-          <p>Provider and theme APKs run as separately built, verified extensions.</p>
-        </article>
-      </div>
-
-      <div class="synthesis" aria-label="Design decisions">
-        <article class="synthesis-card">
-          <h3>Tactile, not noisy</h3>
-          <p>Hard edges, warm paper, and one loud accent make important reading state easy to spot.</p>
-        </article>
-        <article class="synthesis-card">
-          <h3>Evidence, not spectacle</h3>
-          <p>Status, history, and source context stay visible without turning a reading tool into a fake dashboard.</p>
-        </article>
-        <article class="synthesis-card">
-          <h3>Real screens only</h3>
-          <p>The showcase below is reserved for emulator captures so the public story stays accountable to the shipped interface.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="evidence" class="dark-section section" aria-labelledby="evidence-title">
-      <div class="site-shell">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">The evidence</p>
-            <h2 id="evidence-title">A working surface, not a concept render.</h2>
-          </div>
-          <p>
-            These frames are captured from the Android app in a virtual device. The crop is intentionally
-            close to the device so the interface can be judged as an interface.
-          </p>
-        </div>
-
-        <div class="showcase-grid">
-          <figure class={`showcase-card ${showcase[0].className}`}>
-            <img
-              data-scale-image
-              src={asset(showcase[0].src)}
-              alt={showcase[0].alt}
-              loading="lazy"
-              width="1080"
-              height="1920"
-              decoding="async"
-            />
+      <div class="screen-grid">
+        {screens.map((screen, index) => (
+          <figure class={`showcase-card ${index === 3 ? 'showcase-card-feature' : ''}`} data-reveal>
+            <div class="showcase-image-wrap">
+              <img
+                data-scale-image
+                src={asset(screen.src)}
+                alt={screen.alt}
+                loading="lazy"
+                width="1080"
+                height="1920"
+                decoding="async"
+              />
+            </div>
             <figcaption>
-              <strong>{showcase[0].title}</strong>
-              <span>{showcase[0].detail}</span>
+              <div>
+                <strong>{screen.title}</strong>
+                <span>{screen.detail}</span>
+              </div>
+              <small>{screen.label}</small>
             </figcaption>
           </figure>
-          <div class="showcase-stack">
-            {showcase.slice(1).map((item) => (
-              <figure class={`showcase-card ${item.className}`}>
-                <img
-                  data-scale-image
-                  src={asset(item.src)}
-                  alt={item.alt}
-                  loading="lazy"
-                  width="1080"
-                  height="1920"
-                  decoding="async"
-                />
-                <figcaption>
-                  <strong>{item.title}</strong>
-                  <span>{item.detail}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </section>
 
-    <section class="site-shell section" aria-labelledby="principles-title">
-      <div class="section-heading">
+    <section class="dark-section" aria-labelledby="docs-title">
+      <div class="site-shell docs-cta">
         <div>
-          <p class="section-kicker">The interaction model</p>
-          <h2 id="principles-title">The edges are part of the product.</h2>
-        </div>
-        <p>
-          Open the rows, scan the notes, and move through the principles horizontally. Each gesture has
-          a clear native fallback, so the visual character never hides the content.
-        </p>
-      </div>
-
-      <div class="accordions" aria-label="PaperReader interaction principles">
-        <details class="accordion-item">
-          <summary>
-            <span class="accordion-title">Source state stays visible.</span>
-            <span class="accordion-hint">Open for context</span>
-          </summary>
-          <p class="accordion-copy">A provider can be unavailable, rate-limited, or offline without turning the result into a confident-looking lie.</p>
-        </details>
-        <details class="accordion-item">
-          <summary>
-            <span class="accordion-title">Reading has a fallback.</span>
-            <span class="accordion-hint">Open for context</span>
-          </summary>
-          <p class="accordion-copy">Readable HTML is useful for daily work; the original PDF remains available when fidelity matters more.</p>
-        </details>
-        <details class="accordion-item">
-          <summary>
-            <span class="accordion-title">Extensions stay outside.</span>
-            <span class="accordion-hint">Open for context</span>
-          </summary>
-          <p class="accordion-copy">Community sources and themes cross a bounded contract instead of loading untrusted code into the host.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="quote-wrap section" aria-labelledby="field-notes-title">
-      <div class="site-shell">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Field notes</p>
-            <h2 id="field-notes-title">A few promises worth keeping.</h2>
-          </div>
+          <p class="section-kicker">Documentation</p>
+          <h2 id="docs-title">Know what the screen promises.</h2>
           <p>
-            A horizontal, scroll-snap rail keeps the carousel legible with or without JavaScript. These are
-            product principles, not invented user testimonials.
+            Read the product notes, screenshot labels, architecture boundaries, and local development
+            path in the docs.
           </p>
         </div>
-        <div class="quote-rail" aria-label="PaperReader product principles">
-          {principles.map((principle) => (
-            <article class="quote-card">
-              <p>“{principle.quote}”</p>
-              <cite>{principle.source}</cite>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="site-shell">
-      <div class="footer-cta">
-        <h2>Read closer.</h2>
-        <a class="button button-primary" href={repoUrl} target="_blank" rel="noreferrer">
-          Visit PaperReader on GitHub
+        <a class="button button-primary" href={`${baseUrl}docs/`}>
+          Open docs
           <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M3 8h9M8 3l5 5-5 5" />
           </svg>
         </a>
       </div>
-      <div class="footer-meta">
-        <p>PaperReader / Field Notes · Astro + GitHub Pages</p>
-        <p>Designed around the shipped app, not a placeholder.</p>
-      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-shell footer-inner">
+      <p>PaperReader · open-source Android reading</p>
+      <a href={repoUrl} target="_blank" rel="noreferrer">View the repository <span aria-hidden="true">↗</span></a>
     </div>
   </footer>
 </BaseLayout>

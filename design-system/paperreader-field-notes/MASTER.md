@@ -164,7 +164,7 @@
 
 **Style:** Tactile editorial bento
 
-**Keywords:** neobrutalist edges, warm paper, bold type, modular cards, asymmetric evidence, direct hierarchy
+**Keywords:** hard edges, warm paper, bold type, modular cards, asymmetric evidence, direct hierarchy
 
 **Best For:** Open-source product showcases, reading tools, evidence-led portfolios
 
@@ -176,7 +176,7 @@
 
 - **Conversion Strategy:** State the product thesis, explain the protected boundaries, prove the interface with real captures, then offer the repository.
 - **CTA Placement:** Hero evidence CTA, repository link, footer CTA.
-- **Section Order:** 1. Hero, 2. Premise, 3. System boundaries, 4. Emulator evidence, 5. Interaction principles, 6. Field notes, 7. Footer.
+- **Section Order:** 1. Hero, 2. Premise, 3. System boundaries, 4. Screen evidence, 5. Interaction principles, 6. Field notes, 7. Footer.
 
 ---
 

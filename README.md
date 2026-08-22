@@ -1,36 +1,62 @@
-# PaperReader Field Notes
+# PaperReader site
 
-Status: implemented Astro showcase with emulator-backed captures and GitHub Pages deployment configuration.
-
-This site presents PaperReader as a local-first Android reading tool. Its visual direction combines tactile neobrutalist surfaces with the evidence rhythm of a live tracker. It does not reproduce either reference site or present invented product screens.
+PaperReader makes long scholarly papers easier to find, keep, and read on Android. This repository
+contains the short product landing page, the public documentation, and the screen evidence used by
+that page.
 
 Live site: <https://imano177.github.io/paperreader-site/>
 
-## Visual direction
-
-The layout and visual language take cues from [neobrutalism.dev](https://www.neobrutalism.dev/) and [codex-resets.com](https://codex-resets.com/) as visual references only: hard edges, strong spacing, tactile surfaces, and evidence-led composition. The copy is original to PaperReader and stays grounded in the current product behavior.
-
-## Local development
-
-Use Node.js 22 or newer:
+## Start here
 
 ```powershell
 pnpm install
 pnpm dev
+```
+
+Open the local URL printed by Astro. The site uses Node.js 22 or newer and pnpm.
+
+The build is static:
+
+```powershell
 pnpm build
 pnpm preview
 ```
 
-The production build uses `/paperreader-site` locally and derives the GitHub Pages base path from the repository name in CI.
+`pnpm build` writes the deployable site to `dist/`. It is the same command used by the GitHub Pages
+workflow.
 
-## Verification
+## Site map
 
-The release check is `pnpm build`. The page reserves image dimensions, lazy-loads below-fold captures, keeps native interaction fallbacks, and disables the GSAP enhancement for reduced-motion users.
+- `/` is the product landing page and screen showcase.
+- `/docs/` explains the product surfaces, screenshot conventions, project structure, and local work.
+- [`public/showcase`](public/showcase) holds the real Android screen captures used by the landing page.
+- [`showcase-inventory`](showcase-inventory) records every reviewed capture and whether it belongs on
+  the landing page, in the docs, or on hold.
+
+## Content rules
+
+Use a real product screen for every showcase image. Keep the alt text and caption specific to the
+visible state: theme, destination, paper, and error or loading state when relevant. Do not turn a
+placeholder into a product claim.
+
+Keep public copy focused on PaperReader. Internal capture paths, device identifiers, and review notes
+belong in the inventory or commit history, not in the landing page.
 
 ## GitHub Pages
 
-The workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds the static Astro output and publishes it through GitHub Pages. In the website repository, set **Settings → Pages → Source** to **GitHub Actions** before the first deployment.
+The workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds the static Astro
+output and publishes it through GitHub Pages. Set the repository's Pages source to **GitHub Actions**
+when enabling the workflow for a new repository.
 
-## Showcase status
+## Repository layout
 
-Files under [`public/showcase`](public/showcase) are captured from `covaigay_api36` on `emulator-5554` (API 36): Library, Search with recent searches, and the offline PDF reader. Keep their alt text and captions aligned with the actual screen state; do not replace them with mockups.
+```text
+src/pages/                 Landing page route
+src/content/docs/          Starlight documentation
+src/layouts/               Shared landing-page document shell
+src/styles/                Landing and docs styling
+public/showcase/           Selected product captures
+showcase-inventory/        Reviewed capture inventory
+```
+
+The product source lives in the [PaperReader repository](https://github.com/ImAno177/PaperReader).

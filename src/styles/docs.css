@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --sl-font: 'Outfit', system-ui, sans-serif;
+  --sl-font-mono: 'DM Mono', ui-monospace, monospace;
+  --sl-color-accent-low: #fff1b8;
+  --sl-color-accent: #7a4800;
+  --sl-color-accent-high: #241900;
+  --sl-color-bg: #efece4;
+  --sl-color-bg-nav: #101010;
+  --sl-color-bg-sidebar: #e5e1d7;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #3b2d0c;
+  --sl-color-accent: #f5c95d;
+  --sl-color-accent-high: #fff1b8;
+  --sl-color-bg: #101010;
+  --sl-color-bg-nav: #101010;
+  --sl-color-bg-sidebar: #1a1a19;
+}
+
+.site-title {
+  color: #f5c95d;
+}
+
+starlight-theme-select label {
+  color: #f5c95d !important;
+}
+
+mobile-starlight-toc .display-current {
+  color: #f5c95d;
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  letter-spacing: -0.055em;
+}
+
+.sl-markdown-content h1 {
+  font-weight: 800;
+}
+
+.sl-markdown-content a {
+  text-underline-offset: 0.18em;
+}
+
+.sl-markdown-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.sl-markdown-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

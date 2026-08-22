@@ -5,62 +5,57 @@ export async function initFieldNotesMotion() {
 
   initialized = true;
 
-  const [{ gsap }, { ScrollTrigger }] = await Promise.all([
-    import('gsap'),
-    import('gsap/ScrollTrigger'),
-  ]);
+  try {
+    const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+      import('gsap'),
+      import('gsap/ScrollTrigger'),
+    ]);
 
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  document.querySelectorAll('[data-scale-image]').forEach((image) => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: image,
-        start: 'top 90%',
-        end: 'bottom 10%',
-        scrub: 0.8,
-      },
-    });
-
-    timeline
-      .fromTo(image, { opacity: 0.28, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'none' })
-      .to(image, { opacity: 0.24, scale: 0.94, duration: 0.55, ease: 'none' });
-  });
-
-  document.querySelectorAll('[data-scrub-text]').forEach((block) => {
-    const words = block.querySelectorAll('.reveal-word');
-
-    gsap.set(words, { opacity: 0.18 });
-    gsap.to(words, {
-      opacity: 1,
-      ease: 'none',
-      stagger: 0.08,
-      scrollTrigger: {
-        trigger: block,
-        start: 'top 86%',
-        end: 'bottom 44%',
-        scrub: 1,
-      },
-    });
-  });
-
-  document.querySelectorAll('[data-reveal]').forEach((element) => {
-    gsap.fromTo(
-      element,
-      { opacity: 0, y: 18 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.45,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 88%',
-          toggleActions: 'play none none reverse',
+    const motion = gsap.matchMedia();
+    motion.add('(prefers-reduced-motion: no-preference)', () => {
+      ScrollTrigger.batch('[data-reveal]', {
+        batchMax: 8,
+        interval: 0.08,
+        start: 'top 88%',
+        once: true,
+        onEnter: (elements) => {
+          gsap.fromTo(elements, { opacity: 0, y: 12 }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.42,
+            stagger: 0.055,
+            ease: 'power1.out',
+            overwrite: 'auto',
+          });
         },
-      },
-    );
-  });
+      });
 
-  window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+      gsap.utils.toArray('[data-scale-image]').forEach((image) => {
+        gsap.fromTo(
+          image,
+          { opacity: 0.72, scale: 0.96 },
+          {
+            opacity: 1,
+            scale: 1,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: image,
+              start: 'top 92%',
+              end: 'bottom 18%',
+              scrub: 0.65,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+      });
+    });
+
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener('load', refresh, { once: true });
+    document.fonts?.ready.then(refresh);
+  } catch {
+    // CSS keeps every section readable when the optional motion bundle is unavailable.
+  }
 }
