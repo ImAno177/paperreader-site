@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'PaperReader · Field Notes',
+  description = 'A local-first scientific reading tool for discovering, collecting, and reading papers on Android.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const baseUrl = base.endsWith('/') ? base : `${base}/`;
+const canonicalUrl = new URL(baseUrl, Astro.site ?? 'https://imano177.github.io/');
+const previewImageUrl = new URL('showcase/library.png', canonicalUrl);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#101010" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PaperReader" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+    <meta property="og:image" content={previewImageUrl.toString()} />
+    <meta property="og:image:alt" content="PaperReader library screen captured on an Android emulator" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={canonicalUrl.toString()} />
+    <link rel="preload" as="image" href={previewImageUrl.toString()} type="image/png" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      import { initFieldNotesMotion } from '../scripts/field-notes-motion.js';
+
+      initFieldNotesMotion();
+    </script>
+  </body>
+</html>
