@@ -67,8 +67,9 @@ summary {
 }
 
 :focus-visible {
-  outline: 3px solid var(--cobalt);
-  outline-offset: 4px;
+  outline: 3px solid var(--paper);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--ink);
 }
 
 img {
@@ -400,12 +401,6 @@ img {
   border: 2px solid var(--ink);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: transform 200ms ease, box-shadow 200ms ease;
-}
-
-.bento-card:hover {
-  box-shadow: 14px 14px 0 var(--ink);
-  transform: translate(-2px, -2px);
 }
 
 .bento-card h3 {
@@ -722,6 +717,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .synthesis {
     grid-template-columns: 1fr;
   }
@@ -807,6 +806,11 @@ img {
     padding-inline: 1rem;
   }
 
+  .brand {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
   .nav-github {
     min-width: 44px;
     min-height: 44px;
@@ -847,6 +851,12 @@ img {
   .footer-meta {
     flex-direction: column;
     gap: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-links a[href*="#evidence"] {
+    display: none;
   }
 }
 
