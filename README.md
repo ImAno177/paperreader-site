@@ -28,7 +28,8 @@ workflow.
 ## Site map
 
 - `/` is the product landing page and screen showcase.
-- `/docs/` explains the product surfaces, screenshot conventions, project structure, and local work.
+- `/docs/` explains the features and screens in detail, gives step-by-step workflows, and covers
+  architecture, motion, and local development.
 - [`public/showcase`](public/showcase) holds the real Android screen captures used by the landing page.
 - [`showcase-inventory`](showcase-inventory) records every reviewed capture and whether it belongs on
   the landing page, in the docs, or on hold.

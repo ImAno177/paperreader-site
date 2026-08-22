@@ -141,6 +141,9 @@ img {
 }
 
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--night-muted);
   text-decoration: none;
   transition: color 180ms ease;
@@ -274,6 +277,7 @@ img {
 
 .screen-frame {
   min-width: 0;
+  overflow: hidden;
   padding: 0.55rem;
   color: var(--night-muted);
   background: var(--night);
@@ -285,17 +289,11 @@ img {
 .screen-frame img {
   width: 100%;
   height: auto;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 9 / 20;
   background: #292824;
   border: 1px solid var(--night-line);
   border-radius: 14px;
   object-fit: contain;
-}
-
-.screen-frame figcaption {
-  padding: 0.6rem 0.15rem 0.1rem;
-  font: 0.64rem/1.3 'DM Mono', monospace;
-  text-transform: uppercase;
 }
 
 .hero-shot-main {
@@ -415,7 +413,7 @@ img {
 .showcase-image-wrap img {
   width: 100%;
   height: auto;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 9 / 20;
   object-fit: contain;
   transition: transform 500ms ease;
 }
@@ -548,8 +546,8 @@ img {
   }
 
   .nav-github {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     justify-content: center;
     padding: 0;
     font-size: 0;
