@@ -17,7 +17,7 @@ export default defineConfig({
         {
           tag: 'script',
           content:
-            "(()=>{const label=()=>{document.querySelectorAll('site-search input[type=text]').forEach((input)=>{input.id='docs-search';input.name='q';input.setAttribute('aria-label','Search docs');});document.querySelectorAll('site-search button[data-open-modal]').forEach((button)=>button.setAttribute('aria-label','Search Ctrl K'));};new MutationObserver(label).observe(document.documentElement,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',label);})();",
+            "(()=>{const label=()=>{document.querySelectorAll('site-search input[type=text]').forEach((input)=>{input.id='docs-search';input.name='q';input.setAttribute('aria-label','Search docs');});document.querySelectorAll('site-search button[data-open-modal]').forEach((button)=>{button.setAttribute('aria-label','Search');button.querySelectorAll('kbd').forEach((key)=>key.remove());});};new MutationObserver(label).observe(document.documentElement,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',label);})();",
         },
       ],
       sidebar: [
