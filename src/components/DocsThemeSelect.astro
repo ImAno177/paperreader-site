@@ -1,5 +1,6 @@
 ---
 import { Icon } from '@astrojs/starlight/components';
+import PaletteToggle from './PaletteToggle.astro';
 
 const options = [
   { label: Astro.locals.t('themeSelect.dark'), selected: false, value: 'dark' },
@@ -8,16 +9,19 @@ const options = [
 ];
 ---
 
-<starlight-theme-select>
-  <label style="--sl-select-width: 6.25em">
-    <span class="sr-only">{Astro.locals.t('themeSelect.accessibleLabel')}</span>
-    <Icon name="laptop" class="icon label-icon" />
-    <select autocomplete="off" name="theme">
-      {options.map(({ value, selected, label }) => <option value={value} selected={selected}>{label}</option>)}
-    </select>
-    <Icon name="down-caret" class="icon caret" />
-  </label>
-</starlight-theme-select>
+<div class="docs-theme-controls">
+  <PaletteToggle />
+  <starlight-theme-select>
+    <label style="--sl-select-width: 6.25em">
+      <span class="sr-only">{Astro.locals.t('themeSelect.accessibleLabel')}</span>
+      <Icon name="laptop" class="icon label-icon" />
+      <select autocomplete="off" name="theme">
+        {options.map(({ value, selected, label }) => <option value={value} selected={selected}>{label}</option>)}
+      </select>
+      <Icon name="down-caret" class="icon caret" />
+    </label>
+  </starlight-theme-select>
+</div>
 
 <script is:inline>
   StarlightThemeProvider.updatePickers();
@@ -57,6 +61,21 @@ const options = [
 </script>
 
 <style>
+  .docs-theme-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .docs-theme-controls .palette-toggle {
+    min-width: 5.6rem;
+    min-height: 2.5rem;
+    padding-inline: 0.65rem;
+    color: var(--docs-nav-accent);
+    border-color: var(--sl-color-gray-5);
+    font-size: var(--sl-text-sm);
+  }
+
   label {
     --sl-label-icon-size: 0.875rem;
     --sl-caret-size: 1.25rem;

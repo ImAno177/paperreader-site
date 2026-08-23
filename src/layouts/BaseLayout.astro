@@ -34,6 +34,18 @@ const faviconPath = `${baseUrl}favicon.svg`;
     <link rel="preload" as="image" href={previewImagePath} type="image/png" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script is:inline>
+      (() => {
+        try {
+          const palette = localStorage.getItem('paperreader-palette');
+          if (['sun', 'mint', 'violet'].includes(palette)) {
+            document.documentElement.dataset.palette = palette;
+          }
+        } catch {
+          // Keep the default palette when storage is unavailable.
+        }
+      })();
+    </script>
     <title>{title}</title>
   </head>
   <body>

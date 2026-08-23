@@ -30,6 +30,15 @@ The normal flow is deliberately explicit. A search result is not a paper in the 
 HTML export is not automatically the artifact used by `Read`, and a similar title is not proof that two
 records are the same work.
 
+## Site controls
+
+The `Color` control cycles the site between the `Sun`, `Mint`, and `Violet` palettes. The selected
+palette is stored in this browser, so returning to the landing page or wiki keeps the same visual
+choice. On browsers that support the View Transition API, the new palette spreads from the control
+across the page; when `prefers-reduced-motion: reduce` is active, the palette changes without the
+reveal animation. The docs theme selector remains separate and controls light, dark, or automatic
+documentation chrome.
+
 ## Use the wiki by question
 
 | If you are asking... | Read... | You will find... |

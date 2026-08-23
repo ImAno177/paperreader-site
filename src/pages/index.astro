@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PaletteToggle from '../components/PaletteToggle.astro';
 
 const base = import.meta.env.BASE_URL;
 const baseUrl = base.endsWith('/') ? base : `${base}/`;
@@ -63,8 +64,9 @@ const facts = [
     <div class="nav-links">
       <a href={`${baseUrl}#screens`}>Screens</a>
       <a href={`${baseUrl}docs/`}>Docs</a>
+      <PaletteToggle />
       <a class="nav-github" href={repoUrl} target="_blank" rel="noreferrer" aria-label="Open PaperReader on GitHub">
-        GitHub
+        <span class="nav-github-label">GitHub</span>
         <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
           <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.23.48-2.7-1.08-2.7-1.08-.36-.93-.89-1.18-.89-1.18-.73-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.72 1.22 1.89.87 2.35.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.96 0-.88.31-1.6.82-2.16-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82A7.66 7.66 0 0 1 8 4.49a7.7 7.7 0 0 1 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.16 0 3.08-1.87 3.75-3.65 3.95.29.25.54.73.54 1.47l-.01 2.18c0 .21.14.46.55.38A8 8 0 0 0 8 0Z" />
         </svg>

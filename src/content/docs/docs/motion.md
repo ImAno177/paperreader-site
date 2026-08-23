@@ -14,6 +14,7 @@ delay access to a screen.
 | Section reveal | Batched GSAP ScrollTrigger reveal for cards | 12px travel, short stagger, one pass |
 | Screen images | Scroll-linked scale from `0.96` to `1` with `ease: none` | `transform` and `opacity` only |
 | Card hover | A small upward translation and image scale | No layout change; touch remains usable |
+| Palette change | New palette reveals from the color-control origin and expands across the viewport | Native View Transition API; 820ms circular `clip-path` reveal |
 
 The implementation is in [`src/scripts/field-notes-motion.js`](https://github.com/ImAno177/paperreader-site/blob/main/src/scripts/field-notes-motion.js).
 GSAP is imported only after the page loads its module script, so the core landing content does not
@@ -38,7 +39,9 @@ registering the plugin before use and using linear easing for scrubbed motion. T
 follows those rules and batches similar reveals. The performance target is compositor-friendly
 `transform` and `opacity`, following the [web.dev animation guidance](https://web.dev/articles/animations-guide).
 
-Astro supports [View Transitions](https://docs.astro.build/en/guides/view-transitions/) for page
-navigation. They are not enabled here because the landing shell and Starlight docs shell have different
-script lifecycles. A future navigation transition must preserve the same reduced-motion and no-blocking
-rules before it is enabled.
+The palette control uses the browser's [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API/Using)
+for a same-document state change. Its new root snapshot is revealed with an origin-based circle using
+the [CSS `clip-path` property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/clip-path),
+so the new color spreads from the control like a slow pool of ink. Browsers without the API still apply
+the palette immediately. The control also checks [`prefers-reduced-motion`](https://web.dev/articles/prefers-reduced-motion)
+and skips the reveal when motion reduction is requested.

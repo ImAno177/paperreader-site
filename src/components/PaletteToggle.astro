@@ -1,0 +1,22 @@
+---
+const { label = 'Color' } = Astro.props;
+---
+
+<button
+  class="palette-toggle"
+  type="button"
+  data-palette-toggle
+  aria-label="Change color palette"
+  title="Change color palette"
+>
+  <span class="palette-swatch" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </span>
+  <span class="palette-toggle-label">{label}</span>
+</button>
+
+<script>
+  import { initPaletteSwitcher } from '../scripts/palette-switcher.js';
+
+  initPaletteSwitcher();
+</script>

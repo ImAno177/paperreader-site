@@ -1,0 +1,102 @@
+.palette-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 6.25rem;
+  min-height: 48px;
+  padding: 0 0.75rem;
+  color: var(--palette-control-fg, var(--night-muted, var(--sl-color-gray-2)));
+  background: var(--palette-control-bg, transparent);
+  border: 1px solid var(--palette-control-line, var(--night-line, var(--sl-color-gray-5)));
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: 1;
+  text-transform: inherit;
+  appearance: none;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 160ms ease;
+}
+
+.palette-toggle:hover {
+  color: var(--acid, var(--sl-color-accent));
+  border-color: currentColor;
+}
+
+.palette-toggle:active {
+  transform: translateY(1px);
+}
+
+.palette-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+.palette-swatch span {
+  display: block;
+  width: 4px;
+  height: 12px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.palette-swatch span:nth-child(1) {
+  color: var(--acid, var(--sl-color-accent));
+  background: currentColor;
+}
+
+.palette-swatch span:nth-child(2) {
+  color: var(--cobalt, var(--sl-color-accent-high));
+  background: currentColor;
+}
+
+.palette-swatch span:nth-child(3) {
+  color: var(--mint, var(--sl-color-accent-low));
+  background: currentColor;
+}
+
+::view-transition-image-pair(root) {
+  isolation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  display: block;
+  mix-blend-mode: normal;
+}
+
+@media (max-width: 620px) {
+  .palette-toggle {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  .palette-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
+  }
+
+  .palette-toggle {
+    transition-duration: 0.01ms;
+  }
+}
