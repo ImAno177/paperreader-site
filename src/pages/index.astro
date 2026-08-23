@@ -9,42 +9,36 @@ const repoUrl = 'https://github.com/ImAno177/PaperReader';
 const screens = [
   {
     title: 'Library',
-    label: 'Saved papers · dark theme',
     src: 'showcase/library-dark.png',
     alt: 'PaperReader Library screen showing saved papers and reading filters in dark theme',
     detail: 'Saved papers, reading filters, and local progress.',
   },
   {
     title: 'Library',
-    label: 'Saved papers · light theme',
     src: 'showcase/library-light.png',
     alt: 'PaperReader Library screen showing saved papers in light theme',
     detail: 'The same library in a light reading surface.',
   },
   {
     title: 'Search',
-    label: 'Recent searches · dark theme',
     src: 'showcase/search-dark.png',
     alt: 'PaperReader Search screen showing recent paper searches in dark theme',
     detail: 'Recent searches remain available beside discovery.',
   },
   {
     title: 'Paper detail',
-    label: 'arXiv · Attention Is All You Need',
     src: 'showcase/arxiv-detail-dark.png',
     alt: 'PaperReader detail screen for Attention Is All You Need from arXiv',
     detail: 'Metadata, abstract, versions, and reading actions.',
   },
   {
     title: 'Mobile reader',
-    label: 'Attention Is All You Need · 0% read',
     src: 'showcase/attention-mobile-dark.png',
     alt: 'PaperReader mobile reader showing the beginning of Attention Is All You Need',
     detail: 'Cached arXiv HTML with the paper title and abstract.',
   },
   {
     title: 'Sources',
-    label: 'Unavailable provider states · dark theme',
     src: 'showcase/sources-error-dark.png',
     alt: 'PaperReader Sources screen showing unavailable provider states in dark theme',
     detail: 'Provider failures stay visible and can be retried.',
@@ -82,7 +76,10 @@ const facts = [
     <section id="top" class="site-shell hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Open-source Android reader</p>
-        <h1 id="hero-title">Keep the paper <span class="hero-highlight">close.</span></h1>
+        <h1 id="hero-title">
+          Keep papers<br />
+          <span class="hero-highlight">close.</span>
+        </h1>
         <p class="hero-intro">
           PaperReader helps you find, save, and read scholarly papers without losing the source,
           version, or local copy that made the paper useful.
@@ -99,7 +96,7 @@ const facts = [
         <p class="hero-note">Discovery · provenance · reading · backup</p>
       </div>
 
-      <div class="hero-media" aria-label="PaperReader screen preview" data-reveal>
+      <div class="hero-media" aria-label="PaperReader Library screen preview" data-reveal>
         <figure class="screen-frame hero-shot hero-shot-main">
           <img
             src={asset('showcase/library-dark.png')}
@@ -107,16 +104,6 @@ const facts = [
             width="1080"
             height="2400"
             fetchpriority="high"
-            decoding="async"
-          />
-        </figure>
-        <figure class="screen-frame hero-shot hero-shot-secondary">
-          <img
-            src={asset('showcase/arxiv-detail-dark.png')}
-            alt="PaperReader detail screen for Attention Is All You Need from arXiv"
-            width="1080"
-            height="2400"
-            loading="lazy"
             decoding="async"
           />
         </figure>
@@ -145,8 +132,8 @@ const facts = [
       </div>
 
       <div class="screen-grid">
-        {screens.map((screen, index) => (
-          <figure class={`showcase-card ${index === 3 ? 'showcase-card-feature' : ''}`} data-reveal>
+        {screens.map((screen) => (
+          <figure class="showcase-card" data-reveal>
             <div class="showcase-image-wrap">
               <img
                 data-scale-image
@@ -159,11 +146,8 @@ const facts = [
               />
             </div>
             <figcaption>
-              <div>
-                <strong>{screen.title}</strong>
-                <span>{screen.detail}</span>
-              </div>
-              <small>{screen.label}</small>
+              <strong>{screen.title}</strong>
+              <span>{screen.detail}</span>
             </figcaption>
           </figure>
         ))}

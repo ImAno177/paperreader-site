@@ -22,8 +22,31 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Docs',
-          items: [{ autogenerate: { directory: 'docs' } }],
+          label: 'Start here',
+          items: ['docs', 'docs/getting-started', 'docs/concepts'],
+        },
+        {
+          label: 'User guide',
+          items: [
+            'docs/discovery',
+            'docs/features',
+            'docs/reading',
+            'docs/organizing',
+            'docs/screens',
+            'docs/workflows',
+          ],
+        },
+        {
+          label: 'Reference',
+          items: [
+            'docs/sources-and-extensions',
+            'docs/troubleshooting',
+            'docs/reference',
+          ],
+        },
+        {
+          label: 'Contributors',
+          items: ['docs/architecture', 'docs/development', 'docs/motion'],
         },
         {
           label: 'Project',

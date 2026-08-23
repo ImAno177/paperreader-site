@@ -40,6 +40,18 @@ mobile-starlight-toc .display-current {
 
 .sl-markdown-content h1 {
   font-weight: 800;
+  max-width: 20ch;
+  line-height: 1.02;
+}
+
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  max-width: 32ch;
+  line-height: 1.08;
+}
+
+.sl-markdown-content > :is(p, ul, ol, blockquote) {
+  max-width: 72ch;
 }
 
 .sl-markdown-content a {
@@ -56,6 +68,59 @@ mobile-starlight-toc .display-current {
   max-width: 100%;
   overflow-x: auto;
   border-radius: 0.75rem;
+}
+
+.wiki-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.wiki-card {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  min-height: 8.5rem;
+  padding: 1rem 1.05rem;
+  color: inherit !important;
+  background: var(--sl-color-bg-sidebar);
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.75rem;
+  text-decoration: none !important;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.wiki-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--sl-color-accent);
+  box-shadow: 4px 4px 0 var(--sl-color-accent);
+}
+
+.wiki-card:focus-visible {
+  outline: 3px solid var(--sl-color-accent);
+  outline-offset: 3px;
+}
+
+.wiki-card strong {
+  color: var(--sl-color-accent-high);
+  font-size: 1.05rem;
+}
+
+.wiki-card span {
+  color: var(--sl-color-text-accent, inherit);
+  font-size: 0.94rem;
+  line-height: 1.48;
+}
+
+@media (max-width: 42rem) {
+  .wiki-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wiki-card {
+    min-height: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
