@@ -382,8 +382,8 @@ img {
 }
 
 .section {
-  padding-top: clamp(4rem, 9vw, 7.5rem);
-  padding-bottom: clamp(4rem, 9vw, 7.5rem);
+  padding-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-bottom: clamp(4rem, 8vw, 6.5rem);
   scroll-margin-top: 70px;
 }
 
@@ -635,13 +635,24 @@ img {
   }
 
   .screen-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 78%);
+    gap: 1rem;
+    padding: 0.25rem 0.25rem 1.25rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 0.25rem;
+    scroll-snap-type: inline mandatory;
+    scrollbar-color: var(--acid) transparent;
+    scrollbar-width: thin;
   }
 
   .showcase-card,
   .showcase-card:nth-child(n + 4),
   .showcase-card:last-child {
-    grid-column: 1;
+    grid-column: auto;
+    scroll-snap-align: start;
   }
 
   .showcase-image-wrap {
@@ -665,6 +676,33 @@ img {
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 0.35fr);
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 8vw, 4.5rem);
+  }
+
+  .hero-intro,
+  .hero-actions {
+    margin-top: 1rem;
+  }
+
+  .hero-media {
+    width: min(100%, 150px);
+  }
+
+  .hero-shot-main {
+    width: min(100%, 125px);
   }
 }
 
