@@ -3,7 +3,9 @@
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  min-width: 6.25rem;
+  width: 8.25rem;
+  min-width: 8.25rem;
+  flex: 0 0 auto;
   min-height: 48px;
   padding: 0 0.75rem;
   color: var(--theme-control-fg, var(--night-muted, var(--sl-color-gray-2)));
@@ -15,6 +17,12 @@
   text-transform: inherit;
   appearance: none;
   transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 160ms ease;
+}
+
+.theme-toggle-label {
+  width: 5rem;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .theme-toggle:hover {

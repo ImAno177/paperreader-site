@@ -71,13 +71,13 @@ const screens = [
 ];
 
 const facts = [
-  ['Local library', 'Keep papers, history, and backups on the device.'],
-  ['Exact versions', 'Carry provenance from the result to the reading artifact.'],
-  ['Honest states', 'Show offline, unavailable, and loading states with recovery actions.'],
+  ['Find papers', 'Search installed research sources.'],
+  ['Save exact versions', 'Keep the source, version, and local file together.'],
+  ['Read offline', 'Open saved HTML or the original PDF.'],
 ];
 ---
 
-<BaseLayout title="PaperReader | Read closer" description="An open-source Android reader for finding, saving, and reading scholarly papers locally.">
+<BaseLayout title="PaperReader | Read closer" description="An open-source Android paper reader for finding, saving, and reading offline.">
   <a class="skip-link" href="#content">Skip to content</a>
 
   <nav class="site-nav" aria-label="Primary navigation">
@@ -107,18 +107,17 @@ const facts = [
           <span class="hero-highlight">close.</span>
         </h1>
         <p class="hero-intro">
-          Find, save, and read scholarly papers without losing their source, version, or local copy.
+          Find papers. Keep their source and version. Read them offline.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href={`${baseUrl}#screens`}>
-            View the screens
+            See the app
             <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M3 8h9M8 3l5 5-5 5" />
             </svg>
           </a>
-          <a class="button button-secondary" href={`${baseUrl}docs/`}>Read the docs</a>
+          <a class="button button-secondary" href={`${baseUrl}docs/`}>Read docs</a>
         </div>
-        <p class="hero-note">Discovery / provenance / reading / backup</p>
       </div>
 
       <div class="hero-media">
@@ -154,13 +153,10 @@ const facts = [
     <section id="screens" class="site-shell section" aria-labelledby="screens-title">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">Product evidence</p>
+          <p class="section-kicker">Screens</p>
           <h2 id="screens-title">The app in use.</h2>
         </div>
-        <p>
-          Current PaperReader screens, shown as real captured states. The selection keeps the landing
-          page short while the complete review ledger lives in the repository.
-        </p>
+        <p>Five real PaperReader screens, paired for Light and Dark.</p>
       </div>
 
       <div class="screen-grid">
@@ -196,14 +192,11 @@ const facts = [
       <div class="site-shell docs-cta">
         <div>
           <p class="section-kicker">Documentation</p>
-          <h2 id="docs-title">Know what the screen promises.</h2>
-          <p>
-            Read the product notes, screenshot labels, architecture boundaries, and local development
-            path in the docs.
-          </p>
+          <h2 id="docs-title">Go deeper in the docs.</h2>
+          <p>Features, workflows, architecture, extensions, and local setup.</p>
         </div>
         <a class="button button-primary" href={`${baseUrl}docs/`}>
-          Open docs
+          Read docs
           <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M3 8h9M8 3l5 5-5 5" />
           </svg>
@@ -214,7 +207,7 @@ const facts = [
 
   <footer class="site-footer">
     <div class="site-shell footer-inner">
-      <p>PaperReader / open-source Android reading</p>
+      <p>PaperReader / open-source Android paper reader</p>
       <a href={repoUrl} target="_blank" rel="noreferrer">View the repository <span aria-hidden="true">-&gt;</span></a>
     </div>
   </footer>
