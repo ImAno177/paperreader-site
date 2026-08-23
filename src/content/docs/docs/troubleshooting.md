@@ -76,5 +76,5 @@ Empty, loading, offline, rate-limited, invalid, cancelled, and unavailable state
 the action beside the state before changing data. A successful result from one provider can coexist with
 an unavailable state from another, and a saved paper can remain useful even when its provider is offline.
 
-For screen-level evidence, see [Screens](./screens/). For the underlying typed boundaries, see
-[Architecture](./architecture/) and the [product specification](https://github.com/ImAno177/PaperReader/blob/main/docs/SPEC.md).
+For screen-level evidence, see [Screens](../screens/). For the underlying typed boundaries, see
+[Architecture](../architecture/) and the [product specification](https://github.com/ImAno177/PaperReader/blob/main/docs/SPEC.md).

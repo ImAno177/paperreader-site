@@ -70,7 +70,7 @@ These two words are intentionally separate:
 - A **theme extension** supplies declarative palettes, typography, shape, decoration, and semantic icon
   data. The host owns rendering.
 
-Neither extension is loaded into the host process as arbitrary code. See [Sources and extensions](./sources-and-extensions/)
+Neither extension is loaded into the host process as arbitrary code. See [Sources and extensions](../sources-and-extensions/)
 for the trust and install lifecycle.
 
 ## Why the distinction is useful
@@ -82,4 +82,4 @@ device keeps are three different questions. Keeping them separate makes the foll
 2. reopen the exact cached revision rather than silently refetching a different one; and
 3. remove a collection or history entry without removing the saved paper.
 
-For the visible consequences, continue to [Features](./features/) and [Reading](./reading/).
+For the visible consequences, continue to [Features](../features/) and [Reading](../reading/).

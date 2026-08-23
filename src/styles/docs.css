@@ -65,6 +65,12 @@ mobile-starlight-toc .toggle {
   min-height: 44px;
 }
 
+mobile-starlight-toc .isMobile a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+}
+
 .sidebar-content a,
 .sidebar-content summary {
   display: flex;
@@ -252,5 +258,13 @@ mobile-starlight-toc .display-current {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .wiki-card {
+    transition: none;
+  }
+
+  .wiki-card:hover {
+    transform: none;
   }
 }

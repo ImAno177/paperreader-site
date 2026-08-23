@@ -1,9 +1,9 @@
 .theme-toggle {
   position: relative;
   display: inline-grid;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   flex: 0 0 auto;
   padding: 0;
   place-items: center;
@@ -21,11 +21,12 @@
 .theme-toggle::before {
   content: '';
   position: absolute;
-  inset: 5px;
+  inset: 6px;
   box-sizing: border-box;
-  background: var(--theme-control-bg, var(--night));
-  border: 1px solid var(--theme-control-line, var(--night-line, currentColor));
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 50%;
+  box-shadow: none;
   pointer-events: none;
   transition: background-color 120ms ease, border-color 120ms ease;
 }
@@ -36,7 +37,7 @@
 
 .theme-toggle:hover::before {
   background: var(--theme-control-hover-bg, var(--night-soft, var(--sl-color-gray-6)));
-  border-color: currentColor;
+  border-color: var(--theme-control-line, var(--night-line, currentColor));
 }
 
 .theme-toggle:active,
@@ -99,16 +100,6 @@
 @keyframes theme-reveal {
   to {
     clip-path: circle(var(--theme-radius) at var(--theme-x) var(--theme-y));
-  }
-}
-
-@media (max-width: 680px) {
-  .theme-toggle {
-    width: 44px;
-    min-width: 44px;
-    height: 44px;
-    min-height: 44px;
-    padding: 0;
   }
 }
 
