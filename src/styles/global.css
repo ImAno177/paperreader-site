@@ -6,8 +6,10 @@
   --paper: #fffdf8;
   --ink: #171717;
   --muted: #68645c;
+  --paper-muted: #504c44;
   --line: #171717;
   --acid: #f2c94c;
+  --acid-ink: #171717;
   --night: #171717;
   --night-soft: #242321;
   --night-line: #4d4a44;
@@ -33,8 +35,10 @@
   --paper: #f8f4ea;
   --ink: #f8f4ea;
   --muted: #c5c1b8;
+  --paper-muted: #504c44;
   --line: #f8f4ea;
   --acid: #f5d36b;
+  --acid-ink: #171717;
   --night: #050505;
   --night-soft: #171717;
   --night-line: #56534c;
@@ -98,7 +102,7 @@ img {
   top: 0.75rem;
   left: 0.75rem;
   padding: 0.7rem 0.9rem;
-  color: var(--ink);
+  color: var(--acid-ink);
   background: var(--acid);
   border: 2px solid var(--line);
   transform: translateY(-150%);
@@ -150,7 +154,7 @@ img {
   height: 30px;
   flex: 0 0 auto;
   place-items: center;
-  color: var(--ink);
+  color: var(--acid-ink);
   background: var(--acid);
   border: 2px solid currentColor;
   box-shadow: 3px 3px 0 var(--acid);
@@ -192,7 +196,7 @@ img {
   min-width: 96px;
   height: 48px;
   padding: 0 0.8rem;
-  color: var(--ink) !important;
+  color: var(--acid-ink) !important;
   background: var(--acid);
   border: 1px solid var(--acid);
   line-height: 1;
@@ -249,7 +253,7 @@ img {
 .hero-highlight {
   display: inline-block;
   padding: 0.02em 0.12em 0.08em;
-  color: var(--ink);
+  color: var(--acid-ink);
   background: var(--acid);
   box-shadow: 0.12em 0.12em 0 var(--ink);
   transform: rotate(-1deg);
@@ -289,7 +293,7 @@ img {
 }
 
 .button-primary {
-  color: var(--ink);
+  color: var(--acid-ink);
   background: var(--acid);
 }
 
@@ -475,7 +479,7 @@ img {
 }
 
 .showcase-card figcaption span {
-  color: var(--muted);
+  color: var(--paper-muted);
   font-size: 0.92rem;
   line-height: 1.45;
   max-width: 28ch;
