@@ -35,13 +35,12 @@ function updateMetaThemeColor(theme) {
 }
 
 function updateControls(theme) {
-  const label = THEMES[theme].label;
+  const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
-  document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
-    const labelNode = button.querySelector('.theme-toggle-label');
-    if (labelNode) labelNode.textContent = `Theme: ${label}`;
-    button.setAttribute('aria-label', `Theme: ${label}. Activate to switch.`);
-    button.setAttribute('title', `Theme: ${label}. Activate to switch.`);
+  document.querySelectorAll('[data-role="theme-toggle"]').forEach((button) => {
+    button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    button.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+    button.setAttribute('title', `Switch to ${nextTheme} mode`);
     button.setAttribute('data-current-theme', theme);
   });
 }
@@ -130,7 +129,7 @@ export function initThemeSwitcher() {
     isTheme(document.documentElement.dataset.theme) ? document.documentElement.dataset.theme : storedTheme,
   );
 
-  document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+  document.querySelectorAll('[data-role="theme-toggle"]').forEach((button) => {
     button.addEventListener('click', () => {
       if (transitionBusy) return;
       transitionBusy = true;
