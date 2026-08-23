@@ -65,5 +65,5 @@ Restore is preview-first and requires confirmation. Validation and match counts 
 records that cannot be safely matched are skipped and reported. It is not automatic cloud sync, and the
 current scope does not include automatic backup or a user-selectable storage root.
 
-For exact actions, see [Organize a saved paper](./workflows/#organize-a-saved-paper/), [Import a local PDF](./workflows/#import-a-local-pdf/),
-and [Back up and restore metadata](./workflows/#back-up-and-restore-metadata/).
+For exact actions, see [Organize a saved paper](./workflows/#organize-a-saved-paper), [Import a local PDF](./workflows/#import-a-local-pdf),
+and [Back up and restore metadata](./workflows/#back-up-and-restore-metadata).

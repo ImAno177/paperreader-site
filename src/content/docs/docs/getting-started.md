@@ -1,85 +1,78 @@
 ---
 title: Start here
-description: A short orientation to the PaperReader product and this wiki.
+description: Run a first search, save one paper, and choose the right reader.
 sidebar:
   label: Start here
   order: 1
 ---
 
-PaperReader is a local-first Android library and reader for scholarly papers. The shortest useful
-description is a four-step loop: discover a record, save the exact work, choose a manifestation, and
-return to a verified local copy when one is available.
+The shortest useful PaperReader session has four parts: discover a record, inspect its identity, save
+it, then choose a readable manifestation or the original PDF.
 
-Status: implemented orientation for the current pre-1.0 host branch. This page describes the product
-that exists today; it is not an installation promise or a release roadmap.
+Status: implemented orientation for the current pre-1.0 host. Provider results and readable files are
+conditional on installed sources, the network, and the selected paper.
 
-## A first session
+## Before you begin
 
-1. Open `Search` and enter a title, phrase, or exact DOI, arXiv ID, PMID, or PMCID.
-2. Wait for provider cards to settle. A rate-limited or unavailable provider does not erase successful
-   results from another provider.
-3. Open a result and check its title, authors, identifiers, abstract, source, and version.
-4. Choose `Save` when the record is the one you want. Opening a preview alone does not write to the
-   local Library.
-5. Open `Library`, select the saved paper, and use Paper Detail to choose a mobile reader, PDF, source
-   page, export, collection, or reading-status action.
-6. Return to the same paper from Library or History. A verified cached artifact can reopen without a
-   network when it is still retained and the exact manifestation is unchanged.
+PaperReader supports Android 9 or newer. Search requires at least one compatible source extension. A
+paper needs a supported exact-version representation or a local PDF before `Read` can open a document.
 
-The normal flow is deliberately explicit. A search result is not a paper in the local database, an
-HTML export is not automatically the artifact used by `Read`, and a similar title is not proof that two
-records are the same work.
+No account is required. Library records, reading state, collections, history, and annotations stay on
+the device by default.
 
-## Site controls
+## Find one paper
 
-The `Theme` control switches the landing page between `Light` and `Dark`. The selected theme is stored
-in this browser, so returning to the landing page keeps the same choice. On browsers that support the
-View Transition API, the new theme spreads from the control across the page; when
-`prefers-reduced-motion: reduce` is active, the theme changes without the reveal animation. The docs
-theme selector remains separate and supports light, dark, or automatic documentation chrome.
+1. Open `Search` from the root navigation.
+2. Enter a title, phrase, DOI, arXiv ID, PMID, or PMCID.
+3. Submit the query and let the provider cards finish independently.
+4. If one provider fails, keep the successful results and retry only the failed provider when a retry
+   action appears.
+5. Open a result and check its title, authors, identifiers, provider, version, abstract, and access
+   information.
+6. Choose `Save`. Opening a preview alone does not add a record to Library.
 
-The landing page also switches the showcase evidence with the theme. The hero image and each selected
-screen card use a real Light capture in Light mode and the matching real Dark capture in Dark mode. The
-image `src`, accessible description, and visible caption are updated together so the page does not show
-a dark screenshot with a Light label, or the reverse.
+Expected result: the paper appears in `Library` with the exact identifiers and provider provenance
+shown in the preview.
 
-## Use the wiki by question
+If no installed provider finds the paper, PaperReader can offer a constrained Google-to-arXiv handoff.
+Select an arXiv `/abs/`, `/html/`, or `/pdf/` result. The app then asks the installed arXiv source for
+the exact metadata; it never saves a Google snippet as the paper record.
 
-| If you are asking... | Read... | You will find... |
+## Choose how to read
+
+1. Open the saved paper from `Library`.
+2. In Paper Detail, inspect `Versions & files`.
+3. Choose the mobile reader when verified HTML exists for the exact manifestation and revision.
+4. Choose the original PDF when visual fidelity matters or mobile HTML is unavailable.
+5. Return from Library or History. A verified retained artifact can reopen without a network.
+
+The exported HTML file and the app's verified reading artifact are different files. Export can succeed
+even when the bounded offline pool cannot retain the app-private copy. In that case the external file
+remains available, but `Read` does not silently trust it.
+
+## Know what changed
+
+| Action | Changes local data? | What remains separate |
 | --- | --- | --- |
-| What does a term such as manifestation or artifact mean? | [Concepts](./concepts/) | The domain vocabulary and the identity rules behind it |
-| How does a search become a saved paper? | [Discovery](./discovery/) | Query routing, provider roles, recent searches, and recovery states |
-| Which reader should I use? | [Reading](./reading/) | Verified HTML, original PDF, offline retention, export, and annotations |
-| Where did a screen or state come from? | [Screens](./screens/) | The visible UI, normal next actions, and the limits of each capture |
-| How do I complete a task? | [Workflows](./workflows/) | Step-by-step guides for the common actions |
-| How do I keep the Library organized? | [Organizing data](./organizing/) | Collections, history, updates, imports, and metadata backup |
-| Why is a source unavailable or untrusted? | [Sources and extensions](./sources-and-extensions/) | The package, signature, store, and install boundaries |
-| What should I do when something fails? | [Troubleshooting](./troubleshooting/) | Symptom-first recovery steps and honest limitations |
+| Open a search result preview | No | The result is not yet a Library record |
+| Save a paper | Yes | Provider versions and files keep their own provenance |
+| Add or remove a collection | Yes | The saved paper is not deleted |
+| Remove a History entry | Yes | The saved paper remains in Library |
+| Export readable HTML | Writes a user-selected file | The verified app-private artifact keeps its own hash and retention state |
+| Change Light or Dark mode | Changes appearance only | The selected visual theme and paper data are unchanged |
 
-## What the screens mean
+## Continue by goal
 
-The five root destinations are `Library`, `Search`, `Updates`, `History`, and `More`. On a phone they
-are bottom-navigation items; on wider layouts they become a navigation rail. `More` opens secondary
-branches such as Appearance, Collections, Reading & imports, Background updates, Backup, Sources, and
-About. A saved paper opens Paper Detail before a reader or file action is chosen.
+- [Workflows](./workflows/) gives the full steps for search, offline reading, PDF import, saved searches,
+  backup, and sources.
+- [Screens](./screens/) identifies the controls and visible states in the current app captures.
+- [Concepts](./concepts/) explains why works, manifestations, artifacts, and provider observations are
+  stored separately.
+- [Troubleshooting](./troubleshooting/) starts from no results, unavailable readers, invalid files,
+  restore skips, and extension trust states.
 
-Use [Screens](./screens/) when you need to identify a capture. Use [Features](./features/) when you need
-the complete capability list. Use [Reference](./reference/) when you need the state vocabulary or the
-source-of-truth map.
+## Documentation theme
 
-## Status language
-
-- **Implemented** means the current host contract describes the behavior as shipped.
-- **Conditional** means the behavior depends on an installed extension, a supported manifestation, a
-  file, permission, network, or retained cache artifact.
-- **Deferred** means the product contract explicitly keeps it outside the current release scope.
-- **Not proved by a capture** means an image shows a visible state but cannot prove an unseen action.
-
-## Reading the source
-
-This wiki translates the Android repository's product contract into user-facing explanations. The
-authoritative documents remain the [product specification](https://github.com/ImAno177/PaperReader/blob/main/docs/SPEC.md),
-[architecture guide](https://github.com/ImAno177/PaperReader/blob/main/docs/ARCHITECTURE.md),
-[extension SDK guide](https://github.com/ImAno177/PaperReader/blob/main/docs/EXTENSIONS.md), and
-[testing guide](https://github.com/ImAno177/PaperReader/blob/main/docs/TESTING.md). When this site and
-the host disagree, the host contract wins and the site should be corrected.
+The docs theme selector supports Light, Dark, and the browser preference. The landing page has its own
+Light/Dark control and swaps every selected app capture to the matching theme. Reduced-motion settings
+disable the circular theme reveal without hiding content.

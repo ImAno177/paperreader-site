@@ -186,6 +186,24 @@ mobile-starlight-toc .display-current {
   line-height: 1.48;
 }
 
+.docs-screen-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.4rem);
+  max-width: 44rem;
+  margin-block: 1.25rem 2.5rem;
+}
+
+.docs-screen-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #101010;
+  border: 1px solid var(--sl-color-gray-4);
+  border-radius: clamp(1rem, 3vw, 1.8rem);
+  box-shadow: 8px 10px 0 var(--sl-color-accent-low);
+}
+
 @media (max-width: 42rem) {
   .sl-markdown-content table {
     padding-bottom: 0.4rem;
@@ -215,6 +233,19 @@ mobile-starlight-toc .display-current {
 
   .wiki-card {
     min-height: auto;
+  }
+
+  .docs-screen-pair {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    width: min(100%, 18rem);
+    margin-inline: auto;
+    margin-block-end: 2rem;
+  }
+
+  .docs-screen-pair img {
+    border-radius: 0.9rem;
+    box-shadow: 4px 5px 0 var(--sl-color-accent-low);
   }
 }
 
