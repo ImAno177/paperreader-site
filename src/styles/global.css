@@ -307,14 +307,6 @@ img {
   background: var(--paper);
 }
 
-.hero-note {
-  margin: 1rem 0 0;
-  color: var(--muted);
-  font: 0.68rem/1.4 'DM Mono', monospace;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 .hero-media {
   display: flex;
   justify-content: center;
