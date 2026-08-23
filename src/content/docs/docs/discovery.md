@@ -74,5 +74,5 @@ PaperReader does not bypass that challenge and does not use a snippet as a saved
   source.
 - Live API behavior is not deterministic test evidence; fixtures and local servers are used for tests.
 
-For the visible UI sequence, see [Search screen](./screens/#search-screen). For the complete task, see
-[Find and save a paper](./workflows/#find-and-save-a-paper).
+For the visible UI sequence, see [Search screen](../screens/#search-screen). For the complete task, see
+[Find and save a paper](../workflows/#find-and-save-a-paper).

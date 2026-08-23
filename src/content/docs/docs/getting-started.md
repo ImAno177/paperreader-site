@@ -63,12 +63,12 @@ remains available, but `Read` does not silently trust it.
 
 ## Continue by goal
 
-- [Workflows](./workflows/) gives the full steps for search, offline reading, PDF import, saved searches,
+- [Workflows](../workflows/) gives the full steps for search, offline reading, PDF import, saved searches,
   backup, and sources.
-- [Screens](./screens/) identifies the controls and visible states in the current app captures.
-- [Concepts](./concepts/) explains why works, manifestations, artifacts, and provider observations are
+- [Screens](../screens/) identifies the controls and visible states in the current app captures.
+- [Concepts](../concepts/) explains why works, manifestations, artifacts, and provider observations are
   stored separately.
-- [Troubleshooting](./troubleshooting/) starts from no results, unavailable readers, invalid files,
+- [Troubleshooting](../troubleshooting/) starts from no results, unavailable readers, invalid files,
   restore skips, and extension trust states.
 
 ## Documentation theme

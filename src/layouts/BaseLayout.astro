@@ -38,6 +38,9 @@ const faviconPath = `${baseUrl}favicon.svg`;
           const theme = localStorage.getItem('paperreader-theme');
           if (theme === 'light' || theme === 'dark') {
             document.documentElement.dataset.theme = theme;
+            document
+              .querySelector('meta[name="theme-color"]')
+              ?.setAttribute('content', theme === 'dark' ? '#101010' : '#f2efe7');
           }
         } catch {
           // Keep the default light theme when storage is unavailable.

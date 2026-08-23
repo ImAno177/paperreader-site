@@ -128,7 +128,7 @@ img {
   justify-content: space-between;
   gap: 1rem;
   min-height: 68px;
-  padding: 0.8rem max(var(--gutter), env(safe-area-inset-right)) 0.8rem max(var(--gutter), env(safe-area-inset-left));
+  padding: max(0.8rem, env(safe-area-inset-top)) max(var(--gutter), env(safe-area-inset-right)) 0.8rem max(var(--gutter), env(safe-area-inset-left));
   color: var(--paper);
   background: var(--night);
   border-bottom: 1px solid var(--night-line);
@@ -158,7 +158,7 @@ img {
   color: var(--acid-ink);
   background: var(--acid);
   border: 2px solid currentColor;
-  box-shadow: 3px 3px 0 var(--acid);
+  box-shadow: none;
   font: 800 0.78rem/1 'Outfit', sans-serif;
   letter-spacing: -0.1em;
 }
@@ -184,6 +184,11 @@ img {
   transition: color 180ms ease;
 }
 
+.nav-links > a:not(.nav-github) {
+  justify-content: center;
+  min-width: 44px;
+}
+
 .nav-links a:hover {
   color: var(--acid);
 }
@@ -203,6 +208,16 @@ img {
   line-height: 1;
   overflow: visible;
   white-space: nowrap;
+  transition: filter 120ms ease, transform 100ms ease;
+}
+
+.nav-github:hover {
+  filter: brightness(1.08);
+}
+
+.nav-github:active {
+  filter: none;
+  transform: scale(0.96);
 }
 
 .nav-github svg,
@@ -291,6 +306,11 @@ img {
 .button:hover {
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translate(1px, 1px);
 }
 
 .button-primary {
@@ -398,7 +418,7 @@ img {
 .story {
   padding-top: clamp(5rem, 10vw, 8.5rem);
   padding-bottom: clamp(5rem, 10vw, 8.5rem);
-  scroll-margin-top: 70px;
+  scroll-margin-top: calc(70px + env(safe-area-inset-top));
 }
 
 .story-heading {
@@ -658,6 +678,7 @@ img {
 .footer-inner a {
   display: inline-flex;
   align-items: center;
+  gap: 0.35rem;
   min-height: 44px;
   color: var(--acid);
   text-decoration: none;
@@ -886,8 +907,16 @@ img {
   }
 
   .nav-links {
-    gap: 0.35rem;
+    gap: 0.55rem;
     font-size: 0.65rem;
+  }
+
+  .nav-journey {
+    display: none !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.75rem, 14vw, 3.15rem);
   }
 
   .hero-actions {

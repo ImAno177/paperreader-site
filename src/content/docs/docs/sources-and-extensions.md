@@ -31,7 +31,7 @@ asynchronous, bounded, and cancellable. Responses carry neutral records and prov
 than host database objects.
 
 Official source roles currently cover Semantic Scholar, Crossref, arXiv, and Europe PMC. The provider
-model and routing policy are described in [Discovery and search](./discovery/).
+model and routing policy are described in [Discovery and search](../discovery/).
 
 ## What a theme declares
 
