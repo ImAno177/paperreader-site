@@ -26,29 +26,22 @@
   background: var(--theme-control-bg, var(--night));
   border: 1px solid var(--theme-control-line, var(--night-line, currentColor));
   border-radius: 50%;
-  box-shadow: 2px 2px 0 var(--acid, currentColor);
   pointer-events: none;
-  transition: border-color 120ms ease, box-shadow 100ms ease;
+  transition: background-color 120ms ease, border-color 120ms ease;
 }
 
 .theme-toggle:hover {
   color: var(--acid, var(--sl-color-accent));
-  transform: translate(-1px, -1px);
 }
 
 .theme-toggle:hover::before {
+  background: var(--theme-control-hover-bg, var(--night-soft, var(--sl-color-gray-6)));
   border-color: currentColor;
-  box-shadow: 3px 3px 0 var(--acid, currentColor);
 }
 
 .theme-toggle:active,
 .theme-toggle:hover:active {
-  transform: translate(2px, 2px);
-}
-
-.theme-toggle:active::before,
-.theme-toggle:hover:active::before {
-  box-shadow: 0 0 0 var(--acid, currentColor);
+  transform: scale(0.94);
 }
 
 .theme-toggle-icons {
