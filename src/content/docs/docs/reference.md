@@ -45,7 +45,7 @@ Detail and More branches keep a back action.
 | Module boundaries and reader/extension seams | [docs/ARCHITECTURE.md](https://github.com/ImAno177/PaperReader/blob/main/docs/ARCHITECTURE.md) |
 | Extension wire contract, signed stores, and install trust | [docs/EXTENSIONS.md](https://github.com/ImAno177/PaperReader/blob/main/docs/EXTENSIONS.md) |
 | Test commands, coverage, connected evidence, and release gates | [docs/TESTING.md](https://github.com/ImAno177/PaperReader/blob/main/docs/TESTING.md) |
-| Website structure, screenshot inventory, and publishing checks | [Website development](./development/) and [showcase inventory](https://github.com/ImAno177/paperreader-site/tree/main/showcase-inventory) |
+| Website structure and publishing checks | [Website development](./development/) |
 
 Metadata restore can also produce a valid but dormant record when the device does not currently have the
 provider or exact file needed by a saved reading state. The restore preview reports missing providers,

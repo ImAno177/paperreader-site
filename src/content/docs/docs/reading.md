@@ -69,5 +69,5 @@ Readable HTML annotations attach to an exact document hash and stable source/tex
 may be reopened for its optional note or deletion, but it is not silently moved to a different revision,
 sanitizer, parser, or renderer output.
 
-See [Read a paper offline](./workflows/#read-a-paper-offline/) for the user sequence and [Concepts](./concepts/)
+See [Read a paper offline](./workflows/#read-a-paper-offline) for the user sequence and [Concepts](./concepts/)
 for the distinction between a manifestation and a local artifact.
