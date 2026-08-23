@@ -13,12 +13,10 @@ const screens = [
     light: {
       src: 'showcase/library-light.png',
       alt: 'PaperReader Library screen showing saved papers in light theme',
-      detail: 'Saved papers, reading filters, and local progress.',
     },
     dark: {
       src: 'showcase/library-dark.png',
       alt: 'PaperReader Library screen showing saved papers and reading filters in dark theme',
-      detail: 'Saved papers, reading filters, and local progress.',
     },
   },
   {
@@ -26,12 +24,10 @@ const screens = [
     light: {
       src: 'showcase/search-light.png',
       alt: 'PaperReader Search screen showing recent paper searches in light theme',
-      detail: 'Recent searches remain available beside discovery.',
     },
     dark: {
       src: 'showcase/search-dark.png',
       alt: 'PaperReader Search screen showing recent paper searches in dark theme',
-      detail: 'Recent searches remain available beside discovery.',
     },
   },
   {
@@ -39,12 +35,10 @@ const screens = [
     light: {
       src: 'showcase/arxiv-detail-light.png',
       alt: 'PaperReader light paper detail screen for Attention Is All You Need from arXiv',
-      detail: 'Metadata, abstract, versions, and reading actions.',
     },
     dark: {
       src: 'showcase/arxiv-detail-dark.png',
       alt: 'PaperReader dark paper detail screen for Attention Is All You Need from arXiv',
-      detail: 'Metadata, abstract, versions, and reading actions.',
     },
   },
   {
@@ -52,12 +46,10 @@ const screens = [
     light: {
       src: 'showcase/attention-mobile-light.png',
       alt: 'PaperReader mobile reader showing Attention Is All You Need in light theme',
-      detail: 'Cached arXiv HTML with the paper title and abstract.',
     },
     dark: {
       src: 'showcase/attention-mobile-dark.png',
       alt: 'PaperReader mobile reader showing Attention Is All You Need in dark theme',
-      detail: 'Cached arXiv HTML with the paper title and abstract.',
     },
   },
   {
@@ -65,12 +57,10 @@ const screens = [
     light: {
       src: 'showcase/sources-error-light.png',
       alt: 'PaperReader Sources screen showing blocked and orphaned provider states in light theme',
-      detail: 'Blocked and orphaned providers remain visible with recovery actions.',
     },
     dark: {
       src: 'showcase/sources-error-dark.png',
       alt: 'PaperReader Sources screen showing blocked and orphaned provider states in dark theme',
-      detail: 'Blocked and orphaned providers remain visible with recovery actions.',
     },
   },
 ];
@@ -162,14 +152,14 @@ const facts = [
           <h2 id="screens-title">The app in use.</h2>
         </div>
         <p>
-          Current PaperReader screens, labelled by destination and visible state. The selection keeps
-          the landing page short while the complete review ledger lives in the repository.
+          Current PaperReader screens, shown as real captured states. The selection keeps the landing
+          page short while the complete review ledger lives in the repository.
         </p>
       </div>
 
       <div class="screen-grid">
         {screens.map((screen) => (
-          <figure class="showcase-card" data-reveal>
+          <figure class="showcase-card" data-reveal aria-label={`${screen.title} screen`}>
             <div class="showcase-image-wrap">
               <img
                 data-scale-image
@@ -186,16 +176,6 @@ const facts = [
                 decoding="async"
               />
             </div>
-            <figcaption>
-              <strong>{screen.title}</strong>
-              <span
-                data-theme-detail
-                data-light-detail={screen.light.detail}
-                data-dark-detail={screen.dark.detail}
-              >
-                {screen.light.detail}
-              </span>
-            </figcaption>
           </figure>
         ))}
       </div>

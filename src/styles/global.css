@@ -387,7 +387,7 @@ img {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
   gap: 2rem;
-  align-items: start;
+  align-items: end;
   margin-bottom: clamp(2rem, 5vw, 3.5rem);
 }
 
@@ -417,16 +417,13 @@ img {
 }
 
 .showcase-card {
+  display: grid;
+  place-items: center;
   grid-column: span 2;
   min-width: 0;
   margin: 0;
-  padding: 0.7rem;
-  color: var(--ink);
-  background: var(--paper);
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
-  box-shadow: 6px 6px 0 var(--shadow-color);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  padding: 0;
+  transition: transform 180ms ease;
 }
 
 .showcase-card:nth-child(n + 4) {
@@ -435,54 +432,34 @@ img {
 
 .showcase-card:hover {
   transform: translateY(-4px);
-  box-shadow: 8px 8px 0 var(--shadow-color);
 }
 
 .showcase-image-wrap {
   display: grid;
-  min-height: clamp(27rem, 34vw, 32rem);
+  width: min(100%, 250px);
   place-items: center;
-  overflow: hidden;
-  padding: 1rem;
-  background: var(--frame);
-  border: 2px solid var(--frame-line);
-  border-radius: 12px;
+  padding: 0.55rem;
+  background: var(--night);
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--acid);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .showcase-image-wrap img {
-  width: min(100%, 13.5rem);
+  width: 100%;
   height: auto;
   aspect-ratio: 9 / 20;
-  border-radius: 10px;
-  box-shadow: 0 16px 26px rgb(0 0 0 / 28%);
+  background: var(--night-soft);
+  border: 1px solid var(--night-line);
+  border-radius: 14px;
   object-fit: contain;
   transition: transform 300ms ease;
 }
 
-.showcase-card:hover .showcase-image-wrap img {
-  transform: scale(1.025);
-}
-
-.showcase-card figcaption {
-  display: grid;
-  align-content: start;
-  gap: 0.35rem;
-  min-height: 6.4rem;
-  padding: 0.95rem 0.2rem 0.2rem;
-}
-
-.showcase-card figcaption strong {
-  color: var(--ink);
-  font-size: 1.08rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.showcase-card figcaption span {
-  color: var(--paper-muted);
-  font-size: 0.92rem;
-  line-height: 1.45;
-  max-width: 28ch;
+.showcase-card:hover .showcase-image-wrap {
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 0 var(--acid);
 }
 
 .dark-section {
@@ -504,15 +481,17 @@ img {
 }
 
 .docs-cta h2 {
-  max-width: 42rem;
+  max-width: 36rem;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
 }
 
 .docs-cta p:last-child {
-  max-width: 34rem;
+  max-width: 38rem;
   margin: 1.3rem 0 0;
   color: var(--night-muted);
-  font-size: 1.05rem;
-  line-height: 1.5;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
 }
 
 .docs-cta .button {
@@ -645,7 +624,7 @@ img {
   }
 
   .showcase-image-wrap {
-    min-height: 25rem;
+    width: min(100%, 250px);
   }
 
   .fact-strip {
@@ -689,26 +668,6 @@ img {
     width: 180px;
   }
 
-  .showcase-card {
-    padding: 0.55rem;
-    border-radius: 14px;
-    box-shadow: 4px 4px 0 var(--shadow-color);
-  }
-
-  .showcase-card figcaption {
-    display: grid;
-    min-height: 5.8rem;
-    gap: 0.35rem;
-    padding-top: 0.55rem;
-  }
-
-  .showcase-card figcaption strong {
-    font-size: 1rem;
-  }
-
-  .showcase-card figcaption span {
-    font-size: 0.86rem;
-  }
 }
 
 @media (max-width: 359px) {
