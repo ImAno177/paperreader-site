@@ -23,7 +23,58 @@
 }
 
 .site-title {
+  min-height: 44px;
+  padding-block: 0.25rem;
   color: var(--docs-nav-accent);
+}
+
+site-search button[data-open-modal] {
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--docs-nav-accent) !important;
+}
+
+@media (min-width: 50rem) {
+  site-search button[data-open-modal] {
+    background-color: var(--sl-color-bg-nav) !important;
+    border-color: var(--docs-nav-accent) !important;
+  }
+}
+
+@media (min-width: 72rem) {
+  .right-sidebar {
+    width: auto;
+    inset-inline-end: 0;
+  }
+}
+
+starlight-theme-select label,
+starlight-theme-select select {
+  min-height: 44px;
+}
+
+starlight-menu-button button {
+  width: 44px;
+  height: 44px;
+  padding: 0.65rem;
+}
+
+mobile-starlight-toc .toggle {
+  min-height: 44px;
+}
+
+.sidebar-content a,
+.sidebar-content summary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+:where(.site-title, site-search button[data-open-modal], starlight-theme-select select,
+  starlight-menu-button button, mobile-starlight-toc summary, .sidebar-content a,
+  .sidebar-content summary):focus-visible {
+  outline: 3px solid var(--sl-color-accent);
+  outline-offset: 2px;
 }
 
 starlight-theme-select label {
@@ -31,7 +82,9 @@ starlight-theme-select label {
 }
 
 mobile-starlight-toc .display-current {
-  color: var(--docs-nav-accent);
+  color: var(--docs-nav-accent) !important;
+  opacity: 1 !important;
+  font-weight: 600;
 }
 
 .sl-markdown-content h1,
