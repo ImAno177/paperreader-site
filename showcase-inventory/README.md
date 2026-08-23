@@ -34,3 +34,17 @@ describe the visible state, not a concept render.
 
 The landing page uses only the selected files copied into `public/showcase/`. The original inventory
 files stay here so a later review can compare decisions without replacing a capture with a mockup.
+
+## Theme-paired landing captures
+
+The landing page now keeps Light and Dark evidence paired for every selected destination. These are
+the approved public copies under `public/showcase/`; their alt text and captions change with the selected
+site theme as well.
+
+| Destination | Light capture | Dark capture |
+| --- | --- | --- |
+| Library | `library-light.png` | `library-dark.png` |
+| Search | `search-light.png` | `search-dark.png` |
+| Paper detail | `arxiv-detail-light.png` | `arxiv-detail-dark.png` |
+| Mobile reader | `attention-mobile-light.png` | `attention-mobile-dark.png` |
+| Sources | `sources-error-light.png` | `sources-error-dark.png` |

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap');
-@import './palette.css';
+@import './theme.css';
 
 :root {
   --canvas: #efece4;
@@ -9,7 +9,6 @@
   --line: #121212;
   --acid: #f5c95d;
   --cobalt: #6876e8;
-  --mint: #b9e5cf;
   --night: #101010;
   --night-soft: #1b1b19;
   --night-line: #4c4a43;
@@ -23,7 +22,8 @@
   --showcase-four: #26368a;
   --showcase-five: #2d3a33;
   --showcase-six: #3b302b;
-  --shadow: 8px 8px 0 var(--ink);
+  --shadow-color: #121212;
+  --shadow: 8px 8px 0 var(--shadow-color);
   --radius: 18px;
   --gutter: clamp(1rem, 4vw, 2.5rem);
   color: var(--ink);
@@ -33,52 +33,28 @@
   text-rendering: optimizeLegibility;
 }
 
-:root[data-palette='mint'] {
-  --canvas: #edf3ee;
-  --paper: #fbfffc;
-  --ink: #102018;
-  --muted: #516057;
-  --line: #102018;
-  --acid: #b9e5cf;
-  --cobalt: #5d8a72;
-  --mint: #d7f2e2;
-  --night: #12221a;
-  --night-soft: #1d3025;
-  --night-line: #526b5b;
-  --night-muted: #c5d8c9;
-  --body-copy: #33443a;
-  --fact-copy: #3e5345;
-  --section-copy: #3b4e41;
-  --showcase-one: #12221a;
-  --showcase-two: #1d3025;
-  --showcase-three: #27382f;
-  --showcase-four: #2d6651;
-  --showcase-five: #243a2d;
-  --showcase-six: #3c4b37;
-}
-
-:root[data-palette='violet'] {
-  --canvas: #f0ecf8;
-  --paper: #fffcff;
-  --ink: #19141f;
-  --muted: #635b6e;
-  --line: #19141f;
-  --acid: #d8b9ff;
-  --cobalt: #7a5ae8;
-  --mint: #e3d6ff;
-  --night: #1a1522;
-  --night-soft: #282033;
-  --night-line: #665378;
-  --night-muted: #d8cce3;
-  --body-copy: #4c4256;
-  --fact-copy: #574b62;
-  --section-copy: #4b4055;
-  --showcase-one: #1a1522;
-  --showcase-two: #282033;
-  --showcase-three: #352b43;
-  --showcase-four: #4c3b96;
-  --showcase-five: #3a3048;
-  --showcase-six: #4a3a43;
+:root[data-theme='dark'] {
+  --canvas: #101010;
+  --paper: #f7f3e8;
+  --ink: #f7f3e8;
+  --muted: #c2beb4;
+  --line: #f7f3e8;
+  --acid: #f5c95d;
+  --cobalt: #6876e8;
+  --night: #0b0b0b;
+  --night-soft: #1b1b19;
+  --night-line: #4c4a43;
+  --night-muted: #c2beb4;
+  --body-copy: #d8d3c8;
+  --fact-copy: #c2beb4;
+  --section-copy: #d8d3c8;
+  --showcase-one: #101010;
+  --showcase-two: #1b1b19;
+  --showcase-three: #242127;
+  --showcase-four: #26368a;
+  --showcase-five: #253029;
+  --showcase-six: #332a26;
+  --shadow-color: #000;
 }
 
 * {
@@ -309,7 +285,7 @@ img {
 
 .button:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--shadow-color);
 }
 
 .button-primary {
@@ -443,7 +419,7 @@ img {
   background: var(--showcase-one);
   border: 2px solid var(--ink);
   border-radius: var(--radius);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 6px 6px 0 var(--shadow-color);
   transition: transform 180ms ease;
 }
 
@@ -697,7 +673,7 @@ img {
   .showcase-card {
     padding: 0.45rem;
     border-radius: 14px;
-    box-shadow: 4px 4px 0 var(--ink);
+    box-shadow: 4px 4px 0 var(--shadow-color);
   }
 
   .showcase-card figcaption {

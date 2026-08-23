@@ -44,8 +44,8 @@ Normal flow:
 4. Use Paper Detail for version, download, collection, status, or removal actions.
 
 Visible states include loading, data failure, an empty library with a `Find paper` action, and a filter
-with no matching papers. The dark Library capture on the landing page shows saved papers, reading labels,
-and local card actions, not a mockup of the library behavior.
+with no matching papers. The Light and Dark Library captures on the landing page show saved papers,
+reading labels, and local card actions, not a mockup of the library behavior.
 
 ## Search screen
 
@@ -61,7 +61,7 @@ Normal flow:
 4. Open a result to inspect the metadata preview.
 5. Choose Save to add the exact record to Library, or open it again later from recent searches.
 
-The selected Search capture shows recent searches in dark theme. It is evidence of the recent-query
+The selected Search captures show recent searches in both themes. They are evidence of the recent-query
 surface, not evidence that a provider returned results at that moment.
 
 ## Paper Detail screen
@@ -130,9 +130,13 @@ time and reading duration, and removing a history entry does not remove the save
 | --- | --- | --- |
 | Library | Saved papers in dark theme | [Open capture](../../showcase/library-dark.png) |
 | Library | Saved papers in light theme | [Open capture](../../showcase/library-light.png) |
+| Search | Recent searches in light theme | [Open capture](../../showcase/search-light.png) |
 | Search | Recent searches in dark theme | [Open capture](../../showcase/search-dark.png) |
-| Paper detail | arXiv record for *Attention Is All You Need* | [Open capture](../../showcase/arxiv-detail-dark.png) |
-| Mobile reader | The beginning of the cached paper at 0% read | [Open capture](../../showcase/attention-mobile-dark.png) |
+| Paper detail | arXiv record for *Attention Is All You Need* in light theme | [Open capture](../../showcase/arxiv-detail-light.png) |
+| Paper detail | arXiv record for *Attention Is All You Need* in dark theme | [Open capture](../../showcase/arxiv-detail-dark.png) |
+| Mobile reader | The beginning of the cached paper at 0% read in light theme | [Open capture](../../showcase/attention-mobile-light.png) |
+| Mobile reader | The beginning of the cached paper at 0% read in dark theme | [Open capture](../../showcase/attention-mobile-dark.png) |
+| Sources | Unavailable provider states in light theme | [Open capture](../../showcase/sources-error-light.png) |
 | Sources | Unavailable provider states in dark theme | [Open capture](../../showcase/sources-error-dark.png) |
 
 ## Additional states

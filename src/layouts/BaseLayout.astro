@@ -20,7 +20,7 @@ const faviconPath = `${baseUrl}favicon.svg`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#101010" />
+    <meta name="theme-color" content="#efece4" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PaperReader" />
     <meta property="og:title" content={title} />
@@ -37,12 +37,12 @@ const faviconPath = `${baseUrl}favicon.svg`;
     <script is:inline>
       (() => {
         try {
-          const palette = localStorage.getItem('paperreader-palette');
-          if (['sun', 'mint', 'violet'].includes(palette)) {
-            document.documentElement.dataset.palette = palette;
+          const theme = localStorage.getItem('paperreader-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.dataset.theme = theme;
           }
         } catch {
-          // Keep the default palette when storage is unavailable.
+          // Keep the default light theme when storage is unavailable.
         }
       })();
     </script>

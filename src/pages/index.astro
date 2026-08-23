@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PaletteToggle from '../components/PaletteToggle.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 const base = import.meta.env.BASE_URL;
 const baseUrl = base.endsWith('/') ? base : `${base}/`;
@@ -10,39 +10,68 @@ const repoUrl = 'https://github.com/ImAno177/PaperReader';
 const screens = [
   {
     title: 'Library',
-    src: 'showcase/library-dark.png',
-    alt: 'PaperReader Library screen showing saved papers and reading filters in dark theme',
-    detail: 'Saved papers, reading filters, and local progress.',
-  },
-  {
-    title: 'Library',
-    src: 'showcase/library-light.png',
-    alt: 'PaperReader Library screen showing saved papers in light theme',
-    detail: 'The same library in a light reading surface.',
+    light: {
+      src: 'showcase/library-light.png',
+      alt: 'PaperReader Library screen showing saved papers in light theme',
+      detail: 'Saved papers, reading filters, and local progress.',
+    },
+    dark: {
+      src: 'showcase/library-dark.png',
+      alt: 'PaperReader Library screen showing saved papers and reading filters in dark theme',
+      detail: 'Saved papers, reading filters, and local progress.',
+    },
   },
   {
     title: 'Search',
-    src: 'showcase/search-dark.png',
-    alt: 'PaperReader Search screen showing recent paper searches in dark theme',
-    detail: 'Recent searches remain available beside discovery.',
+    light: {
+      src: 'showcase/search-light.png',
+      alt: 'PaperReader Search screen showing recent paper searches in light theme',
+      detail: 'Recent searches remain available beside discovery.',
+    },
+    dark: {
+      src: 'showcase/search-dark.png',
+      alt: 'PaperReader Search screen showing recent paper searches in dark theme',
+      detail: 'Recent searches remain available beside discovery.',
+    },
   },
   {
     title: 'Paper detail',
-    src: 'showcase/arxiv-detail-dark.png',
-    alt: 'PaperReader detail screen for Attention Is All You Need from arXiv',
-    detail: 'Metadata, abstract, versions, and reading actions.',
+    light: {
+      src: 'showcase/arxiv-detail-light.png',
+      alt: 'PaperReader light paper detail screen for Attention Is All You Need from arXiv',
+      detail: 'Metadata, abstract, versions, and reading actions.',
+    },
+    dark: {
+      src: 'showcase/arxiv-detail-dark.png',
+      alt: 'PaperReader dark paper detail screen for Attention Is All You Need from arXiv',
+      detail: 'Metadata, abstract, versions, and reading actions.',
+    },
   },
   {
     title: 'Mobile reader',
-    src: 'showcase/attention-mobile-dark.png',
-    alt: 'PaperReader mobile reader showing the beginning of Attention Is All You Need',
-    detail: 'Cached arXiv HTML with the paper title and abstract.',
+    light: {
+      src: 'showcase/attention-mobile-light.png',
+      alt: 'PaperReader mobile reader showing Attention Is All You Need in light theme',
+      detail: 'Cached arXiv HTML with the paper title and abstract.',
+    },
+    dark: {
+      src: 'showcase/attention-mobile-dark.png',
+      alt: 'PaperReader mobile reader showing Attention Is All You Need in dark theme',
+      detail: 'Cached arXiv HTML with the paper title and abstract.',
+    },
   },
   {
     title: 'Sources',
-    src: 'showcase/sources-error-dark.png',
-    alt: 'PaperReader Sources screen showing unavailable provider states in dark theme',
-    detail: 'Provider failures stay visible and can be retried.',
+    light: {
+      src: 'showcase/sources-error-light.png',
+      alt: 'PaperReader Sources screen showing unavailable provider states in light theme',
+      detail: 'Provider failures stay visible and can be retried.',
+    },
+    dark: {
+      src: 'showcase/sources-error-dark.png',
+      alt: 'PaperReader Sources screen showing unavailable provider states in dark theme',
+      detail: 'Provider failures stay visible and can be retried.',
+    },
   },
 ];
 
@@ -64,7 +93,7 @@ const facts = [
     <div class="nav-links">
       <a href={`${baseUrl}#screens`}>Screens</a>
       <a href={`${baseUrl}docs/`}>Docs</a>
-      <PaletteToggle />
+      <ThemeToggle />
       <a class="nav-github" href={repoUrl} target="_blank" rel="noreferrer" aria-label="Open PaperReader on GitHub">
         <span class="nav-github-label">GitHub</span>
         <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
@@ -101,8 +130,13 @@ const facts = [
       <div class="hero-media" aria-label="PaperReader Library screen preview" data-reveal>
         <figure class="screen-frame hero-shot hero-shot-main">
           <img
-            src={asset('showcase/library-dark.png')}
-            alt="PaperReader Library screen showing saved papers and reading filters in dark theme"
+            data-theme-image
+            data-light-src={asset(screens[0].light.src)}
+            data-dark-src={asset(screens[0].dark.src)}
+            data-light-alt={screens[0].light.alt}
+            data-dark-alt={screens[0].dark.alt}
+            src={asset(screens[0].light.src)}
+            alt={screens[0].light.alt}
             width="1080"
             height="2400"
             fetchpriority="high"
@@ -139,8 +173,13 @@ const facts = [
             <div class="showcase-image-wrap">
               <img
                 data-scale-image
-                src={asset(screen.src)}
-                alt={screen.alt}
+                data-theme-image
+                data-light-src={asset(screen.light.src)}
+                data-dark-src={asset(screen.dark.src)}
+                data-light-alt={screen.light.alt}
+                data-dark-alt={screen.dark.alt}
+                src={asset(screen.light.src)}
+                alt={screen.light.alt}
                 loading="lazy"
                 width="1080"
                 height="2400"
@@ -149,7 +188,13 @@ const facts = [
             </div>
             <figcaption>
               <strong>{screen.title}</strong>
-              <span>{screen.detail}</span>
+              <span
+                data-theme-detail
+                data-light-detail={screen.light.detail}
+                data-dark-detail={screen.dark.detail}
+              >
+                {screen.light.detail}
+              </span>
             </figcaption>
           </figure>
         ))}

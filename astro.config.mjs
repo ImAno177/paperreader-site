@@ -17,11 +17,6 @@ export default defineConfig({
         {
           tag: 'script',
           content:
-            "(()=>{try{const palette=localStorage.getItem('paperreader-palette');if(['sun','mint','violet'].includes(palette))document.documentElement.dataset.palette=palette;}catch{}})();",
-        },
-        {
-          tag: 'script',
-          content:
             "(()=>{const label=()=>{document.querySelectorAll('site-search input[type=text]').forEach((input)=>{input.id='docs-search';input.name='q';input.setAttribute('aria-label','Search docs');});document.querySelectorAll('site-search button[data-open-modal]').forEach((button)=>{button.setAttribute('aria-label','Search');button.querySelectorAll('kbd').forEach((key)=>key.remove());});};new MutationObserver(label).observe(document.documentElement,{childList:true,subtree:true});document.addEventListener('DOMContentLoaded',label);})();",
         },
       ],

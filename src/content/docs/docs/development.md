@@ -54,6 +54,7 @@ with its [`docs/SPEC.md`](https://github.com/ImAno177/PaperReader/blob/main/docs
 
 ## Before publishing a screen
 
-Update the image dimensions, alt text, caption, and `showcase-inventory/README.md` together. Run
-`pnpm build`, review the landing page and docs at desktop and phone widths, and check internal links
-before pushing to `main`.
+Update both theme captures, image dimensions, alt text, caption, and `showcase-inventory/README.md`
+together. Keep the Light/Dark mapping in `src/pages/index.astro` and
+`src/scripts/theme-switcher.js` synchronized. Run `pnpm build`, review the landing page and docs at
+desktop and phone widths, and check internal links before pushing to `main`.

@@ -32,12 +32,16 @@ records are the same work.
 
 ## Site controls
 
-The `Color` control cycles the site between the `Sun`, `Mint`, and `Violet` palettes. The selected
-palette is stored in this browser, so returning to the landing page or wiki keeps the same visual
-choice. On browsers that support the View Transition API, the new palette spreads from the control
-across the page; when `prefers-reduced-motion: reduce` is active, the palette changes without the
-reveal animation. The docs theme selector remains separate and controls light, dark, or automatic
-documentation chrome.
+The `Theme` control switches the landing page between `Light` and `Dark`. The selected theme is stored
+in this browser, so returning to the landing page keeps the same choice. On browsers that support the
+View Transition API, the new theme spreads from the control across the page; when
+`prefers-reduced-motion: reduce` is active, the theme changes without the reveal animation. The docs
+theme selector remains separate and supports light, dark, or automatic documentation chrome.
+
+The landing page also switches the showcase evidence with the theme. The hero image and each selected
+screen card use a real Light capture in Light mode and the matching real Dark capture in Dark mode. The
+image `src`, accessible description, and visible caption are updated together so the page does not show
+a dark screenshot with a Light label, or the reverse.
 
 ## Use the wiki by question
 

@@ -1,0 +1,22 @@
+---
+const { label = 'Theme: Light' } = Astro.props;
+---
+
+<button
+  class="theme-toggle"
+  type="button"
+  data-theme-toggle
+  aria-label="Theme: Light. Activate to switch."
+  title="Theme: Light. Activate to switch."
+>
+  <span class="theme-swatch" aria-hidden="true">
+    <span></span><span></span>
+  </span>
+  <span class="theme-toggle-label">{label}</span>
+</button>
+
+<script>
+  import { initThemeSwitcher } from '../scripts/theme-switcher.js';
+
+  initThemeSwitcher();
+</script>

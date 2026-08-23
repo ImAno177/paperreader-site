@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap');
-@import './palette.css';
 
 :root {
   --sl-font: 'Outfit', system-ui, sans-serif;
@@ -23,56 +22,8 @@
   --docs-nav-accent: #f5c95d;
 }
 
-:root[data-palette='mint'] {
-  --sl-color-accent-low: #d7f2e2;
-  --sl-color-accent: #205d3d;
-  --sl-color-accent-high: #102a1c;
-  --sl-color-bg: #edf3ee;
-  --sl-color-bg-nav: #12221a;
-  --sl-color-bg-sidebar: #dfece3;
-  --docs-nav-accent: #b9e5cf;
-}
-
-:root[data-theme='dark'][data-palette='mint'] {
-  --sl-color-accent-low: #193428;
-  --sl-color-accent: #b9e5cf;
-  --sl-color-accent-high: #e6faec;
-  --sl-color-bg: #12221a;
-  --sl-color-bg-nav: #12221a;
-  --sl-color-bg-sidebar: #1d3025;
-  --docs-nav-accent: #b9e5cf;
-}
-
-:root[data-palette='violet'] {
-  --sl-color-accent-low: #eadcff;
-  --sl-color-accent: #5f3cad;
-  --sl-color-accent-high: #21143b;
-  --sl-color-bg: #f0ecf8;
-  --sl-color-bg-nav: #1a1522;
-  --sl-color-bg-sidebar: #e5ddf2;
-  --docs-nav-accent: #d8b9ff;
-}
-
-:root[data-theme='dark'][data-palette='violet'] {
-  --sl-color-accent-low: #34234a;
-  --sl-color-accent: #d8b9ff;
-  --sl-color-accent-high: #f2e8ff;
-  --sl-color-bg: #1a1522;
-  --sl-color-bg-nav: #1a1522;
-  --sl-color-bg-sidebar: #282033;
-  --docs-nav-accent: #d8b9ff;
-}
-
 .site-title {
   color: var(--docs-nav-accent);
-}
-
-.docs-theme-controls .palette-toggle {
-  color: var(--docs-nav-accent) !important;
-}
-
-.docs-theme-controls .palette-toggle-label {
-  color: inherit;
 }
 
 starlight-theme-select label {
@@ -164,10 +115,6 @@ mobile-starlight-toc .display-current {
   line-height: 1.48;
 }
 
-.docs-mobile-palette {
-  display: none;
-}
-
 @media (max-width: 42rem) {
   .wiki-grid {
     grid-template-columns: 1fr;
@@ -175,20 +122,6 @@ mobile-starlight-toc .display-current {
 
   .wiki-card {
     min-height: auto;
-  }
-}
-
-@media (max-width: 620px) {
-  .docs-mobile-palette {
-    position: fixed;
-    z-index: 20;
-    right: max(1rem, env(safe-area-inset-right));
-    bottom: max(1rem, env(safe-area-inset-bottom));
-    display: inline-flex;
-    color: var(--docs-nav-accent);
-    background: var(--sl-color-bg-nav);
-    border-color: var(--docs-nav-accent);
-    box-shadow: 3px 3px 0 var(--sl-color-accent);
   }
 }
 

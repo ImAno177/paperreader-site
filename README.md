@@ -40,6 +40,9 @@ Use a real product screen for every showcase image. Keep the alt text and captio
 visible state: theme, destination, paper, and error or loading state when relevant. Do not turn a
 placeholder into a product claim.
 
+The landing page keeps a Light and Dark capture for every selected screen. When the site theme changes,
+the corresponding image source, alt text, and caption state must change together.
+
 Keep public copy focused on PaperReader. Internal capture paths, device identifiers, and review notes
 belong in the inventory or commit history, not in the landing page.
 
