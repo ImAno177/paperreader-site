@@ -104,8 +104,8 @@ without deleting the provider records needed to display saved-paper provenance.
 
 ## Appearance, access, and privacy
 
-Appearance has independent controls for the built-in Neobrutalism preset, complete community themes,
-and System, Light, or Dark mode. The host uses adaptive navigation and 48 dp semantic touch targets.
+Appearance has independent controls for built-in and community themes, plus System, Light, or Dark mode.
+The host uses adaptive navigation and 48 dp semantic touch targets.
 The English UI makes error and recovery states explicit, and state is not communicated by color alone.
 
 The default product is local-first. Metadata, reading state, history, collections, annotations, and

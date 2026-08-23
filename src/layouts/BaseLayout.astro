@@ -2,7 +2,7 @@
 import '../styles/global.css';
 
 const {
-  title = 'PaperReader · Read closer',
+  title = 'PaperReader | Read closer',
   description = 'A local-first scientific reading tool for discovering, collecting, and reading papers on Android.',
 } = Astro.props;
 
@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL;
 const baseUrl = base.endsWith('/') ? base : `${base}/`;
 const canonicalUrl = new URL(baseUrl, Astro.site ?? 'https://imano177.github.io/');
 const previewImageUrl = new URL('showcase/library-dark.png', canonicalUrl);
-const previewImagePath = `${baseUrl}showcase/library-dark.png`;
+const previewImagePath = `${baseUrl}showcase/library-light.png`;
 const faviconPath = `${baseUrl}favicon.svg`;
 ---
 
@@ -20,7 +20,7 @@ const faviconPath = `${baseUrl}favicon.svg`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#efece4" />
+    <meta name="theme-color" content="#f2efe7" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PaperReader" />
     <meta property="og:title" content={title} />

@@ -21,18 +21,18 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#121212` | `--ink` |
+| Primary | `#171717` | `--ink` |
 | On Primary | `#FFFDF8` | `--paper` |
 | Secondary | `#101010` | `--night` |
-| Accent/CTA | `#F5C95D` | `--acid` |
-| Background | `#EFECE4` | `--canvas` |
-| Foreground | `#121212` | `--ink` |
-| Muted | `#5C5A55` | `--muted` |
-| Border | `#121212` | `--line` |
-| Supporting accent | `#6876E8` | `--cobalt` |
-| Supporting surface | `#B9E5CF` | `--mint` |
+| Accent/CTA | `#F2C94C` | `--acid` |
+| Background | `#F2EFE7` | `--canvas` |
+| Foreground | `#171717` | `--ink` |
+| Muted | `#68645C` | `--muted` |
+| Border | `#171717` | `--line` |
+| Supporting accent | `#C5C1B8` | `--night-muted` |
+| Supporting surface | `#FFFDF8` | `--paper` |
 
-**Color Notes:** Warm paper canvas, near-black reading surface, acid yellow CTA, cobalt anchor, mint supporting surface.
+**Color Notes:** Warm paper canvas, near-black reading surface, one acid-yellow CTA, and neutral screenshot frames. Light and dark mode share the same evidence hierarchy.
 
 ### Typography
 
@@ -64,9 +64,9 @@
 
 | Level | Value | Usage |
 |-------|-------|-------|
-| `--shadow-small` | `5px 5px 0 #121212` | Button and small-card lift |
-| `--shadow` | `10px 10px 0 #121212` | Bento cards and featured surfaces |
-| `--shadow-large` | `16px 16px 0 #121212` | Hero device frame |
+| `--shadow-small` | `5px 5px 0 #171717` | Button and small-card lift |
+| `--shadow` | `10px 10px 0 #171717` | Bento cards and featured surfaces |
+| `--shadow-large` | `16px 16px 0 #171717` | Hero device frame |
 
 ---
 
@@ -77,8 +77,8 @@
 ```css
 /* Primary Button */
 .btn-primary {
-  background: #F5C95D;
-  color: #121212;
+  background: #F2C94C;
+  color: #171717;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -94,8 +94,8 @@
 /* Secondary Button */
 .btn-secondary {
   background: transparent;
-  color: #121212;
-  border: 2px solid #121212;
+  color: #171717;
+  border: 2px solid #171717;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -108,7 +108,7 @@
 
 ```css
 .card {
-  background: #101010;
+  background: #0F0F0F;
   border-radius: 12px;
   padding: 24px;
   box-shadow: var(--shadow);
@@ -134,9 +134,9 @@
 }
 
 .input:focus {
-  border-color: #6876E8;
+  border-color: #F2C94C;
   outline: none;
-  box-shadow: 0 0 0 3px #6876E820;
+  box-shadow: 0 0 0 3px #F2C94C40;
 }
 ```
 

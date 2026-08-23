@@ -14,7 +14,7 @@ describe the visible state, not a concept render.
 | File | Visible state | Decision |
 | --- | --- | --- |
 | `01-library-dark.png` | Library with saved papers, dark theme | Landing |
-| `02-search-dark.png` | Search with recent searches, dark theme | Landing |
+| `02-search-dark.png` | Launch splash screen, dark theme; not a Search capture | Hold |
 | `03-updates-dark.png` | Empty Updates destination, dark theme | Docs |
 | `04-history-dark.png` | History destination, dark theme | Docs |
 | `05-more-dark.png` | More destination, dark theme | Docs |
@@ -34,6 +34,16 @@ describe the visible state, not a concept render.
 
 The landing page uses only the selected files copied into `public/showcase/`. The original inventory
 files stay here so a later review can compare decisions without replacing a capture with a mockup.
+
+## Recaptured landing set
+
+The `recaptured-2026-08-23/` directory contains the ten landing captures recaptured from the connected
+`emulator-5554` device on 2026-08-23: Library, Search, Paper detail, Mobile reader, and Sources in
+both Light and Dark mode. Each pair uses the same seeded paper data and visible destination state.
+
+The prior public copies were moved to `archive-before-recapture-2026-08-23/` before the recaptured files
+were copied into `public/showcase/`. This keeps the earlier evidence available while making the public
+landing set match its labels.
 
 ## Theme-paired landing captures
 

@@ -49,7 +49,7 @@
 }
 
 .theme-swatch span:nth-child(2) {
-  color: var(--cobalt, var(--sl-color-accent));
+  color: var(--muted, var(--sl-color-accent));
   background: currentColor;
 }
 
@@ -78,7 +78,7 @@
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 680px) {
   .theme-toggle {
     width: 44px;
     min-width: 44px;

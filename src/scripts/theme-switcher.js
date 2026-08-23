@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'paperreader-theme';
 const THEME_ORDER = ['light', 'dark'];
 const THEMES = {
-  light: { label: 'Light', themeColor: '#efece4' },
+  light: { label: 'Light', themeColor: '#f2efe7' },
   dark: { label: 'Dark', themeColor: '#101010' },
 };
 

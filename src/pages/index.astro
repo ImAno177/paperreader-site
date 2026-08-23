@@ -64,13 +64,13 @@ const screens = [
     title: 'Sources',
     light: {
       src: 'showcase/sources-error-light.png',
-      alt: 'PaperReader Sources screen showing unavailable provider states in light theme',
-      detail: 'Provider failures stay visible and can be retried.',
+      alt: 'PaperReader Sources screen showing blocked and orphaned provider states in light theme',
+      detail: 'Blocked and orphaned providers remain visible with recovery actions.',
     },
     dark: {
       src: 'showcase/sources-error-dark.png',
-      alt: 'PaperReader Sources screen showing unavailable provider states in dark theme',
-      detail: 'Provider failures stay visible and can be retried.',
+      alt: 'PaperReader Sources screen showing blocked and orphaned provider states in dark theme',
+      detail: 'Blocked and orphaned providers remain visible with recovery actions.',
     },
   },
 ];
@@ -82,7 +82,7 @@ const facts = [
 ];
 ---
 
-<BaseLayout title="PaperReader · Read closer" description="An open-source Android reader for finding, saving, and reading scholarly papers locally.">
+<BaseLayout title="PaperReader | Read closer" description="An open-source Android reader for finding, saving, and reading scholarly papers locally.">
   <a class="skip-link" href="#content">Skip to content</a>
 
   <nav class="site-nav" aria-label="Primary navigation">
@@ -96,7 +96,7 @@ const facts = [
       <ThemeToggle />
       <a class="nav-github" href={repoUrl} target="_blank" rel="noreferrer" aria-label="Open PaperReader on GitHub">
         <span class="nav-github-label">GitHub</span>
-        <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
+        <svg viewBox="-1 -1 18 18" aria-hidden="true" fill="currentColor" focusable="false">
           <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.23.48-2.7-1.08-2.7-1.08-.36-.93-.89-1.18-.89-1.18-.73-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.72 1.22 1.89.87 2.35.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.96 0-.88.31-1.6.82-2.16-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82A7.66 7.66 0 0 1 8 4.49a7.7 7.7 0 0 1 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.16 0 3.08-1.87 3.75-3.65 3.95.29.25.54.73.54 1.47l-.01 2.18c0 .21.14.46.55.38A8 8 0 0 0 8 0Z" />
         </svg>
       </a>
@@ -124,7 +124,7 @@ const facts = [
           </a>
           <a class="button button-secondary" href={`${baseUrl}docs/`}>Read the docs</a>
         </div>
-        <p class="hero-note">Discovery · provenance · reading · backup</p>
+        <p class="hero-note">Discovery / provenance / reading / backup</p>
       </div>
 
       <div class="hero-media" aria-label="PaperReader Library screen preview" data-reveal>
@@ -223,8 +223,8 @@ const facts = [
 
   <footer class="site-footer">
     <div class="site-shell footer-inner">
-      <p>PaperReader · open-source Android reading</p>
-      <a href={repoUrl} target="_blank" rel="noreferrer">View the repository <span aria-hidden="true">↗</span></a>
+      <p>PaperReader / open-source Android reading</p>
+      <a href={repoUrl} target="_blank" rel="noreferrer">View the repository <span aria-hidden="true">-&gt;</span></a>
     </div>
   </footer>
 </BaseLayout>
