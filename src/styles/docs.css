@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
+  --sl-menu-button-size: 2.75rem !important;
   --sl-font: 'Outfit', system-ui, sans-serif;
   --sl-font-mono: 'DM Mono', ui-monospace, monospace;
   --sl-color-accent-low: #fff1b8;
@@ -40,6 +41,11 @@ site-search button[data-open-modal] {
   site-search button[data-open-modal] {
     background-color: var(--sl-color-bg-nav) !important;
     border-color: var(--docs-nav-accent) !important;
+    max-width: var(--sl-content-width) !important;
+  }
+
+  site-search dialog {
+    max-width: var(--sl-content-width) !important;
   }
 }
 
@@ -56,8 +62,8 @@ starlight-theme-select select {
 }
 
 starlight-menu-button button {
-  width: 44px;
-  height: 44px;
+  width: var(--sl-menu-button-size);
+  height: var(--sl-menu-button-size);
   padding: 0.65rem;
 }
 
