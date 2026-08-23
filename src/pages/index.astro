@@ -10,6 +10,7 @@ const repoUrl = 'https://github.com/ImAno177/PaperReader';
 const screens = [
   {
     title: 'Library',
+    href: `${baseUrl}docs/screens/#library-screen`,
     light: {
       src: 'showcase/library-light.png',
       alt: 'PaperReader Library screen showing saved papers in light theme',
@@ -21,6 +22,7 @@ const screens = [
   },
   {
     title: 'Search',
+    href: `${baseUrl}docs/screens/#search-screen`,
     light: {
       src: 'showcase/search-light.png',
       alt: 'PaperReader Search screen showing recent paper searches in light theme',
@@ -32,6 +34,7 @@ const screens = [
   },
   {
     title: 'Paper detail',
+    href: `${baseUrl}docs/screens/#paper-detail-screen`,
     light: {
       src: 'showcase/arxiv-detail-light.png',
       alt: 'PaperReader light paper detail screen for Attention Is All You Need from arXiv',
@@ -43,6 +46,7 @@ const screens = [
   },
   {
     title: 'Mobile reader',
+    href: `${baseUrl}docs/screens/#mobile-reader-screen`,
     light: {
       src: 'showcase/attention-mobile-light.png',
       alt: 'PaperReader mobile reader showing Attention Is All You Need in light theme',
@@ -54,6 +58,7 @@ const screens = [
   },
   {
     title: 'Sources',
+    href: `${baseUrl}docs/screens/#more-branches`,
     light: {
       src: 'showcase/sources-error-light.png',
       alt: 'PaperReader Sources screen showing blocked and orphaned provider states in light theme',
@@ -102,8 +107,7 @@ const facts = [
           <span class="hero-highlight">close.</span>
         </h1>
         <p class="hero-intro">
-          PaperReader helps you find, save, and read scholarly papers without losing the source,
-          version, or local copy that made the paper useful.
+          Find, save, and read scholarly papers without losing their source, version, or local copy.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href={`${baseUrl}#screens`}>
@@ -117,22 +121,24 @@ const facts = [
         <p class="hero-note">Discovery / provenance / reading / backup</p>
       </div>
 
-      <div class="hero-media" aria-label="PaperReader Library screen preview" data-reveal>
-        <figure class="screen-frame hero-shot hero-shot-main">
-          <img
-            data-theme-image
-            data-light-src={asset(screens[0].light.src)}
-            data-dark-src={asset(screens[0].dark.src)}
-            data-light-alt={screens[0].light.alt}
-            data-dark-alt={screens[0].dark.alt}
-            src={asset(screens[0].light.src)}
-            alt={screens[0].light.alt}
-            width="1080"
-            height="2400"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </figure>
+      <div class="hero-media">
+        <a class="screen-link hero-screen-link" href={screens[0].href} aria-label="Open Library screen documentation">
+          <figure class="screen-frame hero-shot hero-shot-main">
+            <img
+              data-theme-image
+              data-light-src={asset(screens[0].light.src)}
+              data-dark-src={asset(screens[0].dark.src)}
+              data-light-alt={screens[0].light.alt}
+              data-dark-alt={screens[0].dark.alt}
+              src={asset(screens[0].light.src)}
+              alt={screens[0].light.alt}
+              width="1080"
+              height="2400"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
+        </a>
       </div>
     </section>
 
@@ -159,7 +165,12 @@ const facts = [
 
       <div class="screen-grid">
         {screens.map((screen) => (
-          <figure class="showcase-card" data-reveal aria-label={`${screen.title} screen`}>
+          <a
+            class="showcase-card screen-link"
+            data-reveal
+            href={screen.href}
+            aria-label={`Open ${screen.title} screen documentation`}
+          >
             <div class="showcase-image-wrap">
               <img
                 data-scale-image
@@ -176,7 +187,7 @@ const facts = [
                 decoding="async"
               />
             </div>
-          </figure>
+          </a>
         ))}
       </div>
     </section>

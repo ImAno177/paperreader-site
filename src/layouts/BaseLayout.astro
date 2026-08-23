@@ -10,7 +10,6 @@ const base = import.meta.env.BASE_URL;
 const baseUrl = base.endsWith('/') ? base : `${base}/`;
 const canonicalUrl = new URL(baseUrl, Astro.site ?? 'https://imano177.github.io/');
 const previewImageUrl = new URL('showcase/library-dark.png', canonicalUrl);
-const previewImagePath = `${baseUrl}showcase/library-light.png`;
 const faviconPath = `${baseUrl}favicon.svg`;
 ---
 
@@ -31,7 +30,6 @@ const faviconPath = `${baseUrl}favicon.svg`;
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href={canonicalUrl.toString()} />
     <link rel="icon" href={faviconPath} type="image/svg+xml" />
-    <link rel="preload" as="image" href={previewImagePath} type="image/png" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script is:inline>
