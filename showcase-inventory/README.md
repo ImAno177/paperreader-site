@@ -45,6 +45,10 @@ The prior public copies were moved to `archive-before-recapture-2026-08-23/` bef
 were copied into `public/showcase/`. This keeps the earlier evidence available while making the public
 landing set match its labels.
 
+During the follow-up visual review, the Search Light file was found to contain a Dark capture. The
+incorrect public copy is preserved in `archive-before-search-light-fix-2026-08-23/`; the corrected
+Search Light capture now replaces both the public copy and the dated recapture in the table below.
+
 ## Theme-paired landing captures
 
 The landing page now keeps Light and Dark evidence paired for every selected destination. These are
