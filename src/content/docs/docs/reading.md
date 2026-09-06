@@ -42,6 +42,19 @@ The WebView is non-exported, network-blocked, and fed sanitized content with a d
 Executable markup and unsafe URLs are removed before storage. The renderer validates the app-private
 artifact instead of trusting a user-editable export.
 
+## HTML and figure assets
+
+The verified HTML path downloads the document body and same-document figures through separate lanes.
+The body stores opaque local asset references; the asset lane fetches, validates, hashes, and stores
+each raster or allowlisted SVG independently. The current path has no figure-count cap. Each asset is
+still bounded to 8 MiB, SVG complexity is checked, the asset metadata manifest is capped at 256 KiB,
+and cache quotas limit total retained data.
+
+Asset requests run in small concurrent batches and use bounded retry and backoff for transient rate
+limits or unavailable responses. A persistent failure leaves the figure caption and a visible
+unavailable state in the document. SVG scripts and external references remain rejected, while
+self-contained embedded raster data may be retained after sanitization.
+
 ## Offline has a precise meaning
 
 The app labels an artifact as cached or saved offline only when it has the exact manifestation/version,
