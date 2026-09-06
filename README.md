@@ -86,7 +86,8 @@ implementation or test evidence in the Android repository.
 
 - `/` contains the product landing page and selected screen showcase.
 - `/docs/` contains getting started, concepts, discovery, reading, organizing, troubleshooting,
-  screen notes, workflows, architecture, motion, and local-development guides.
+  screen notes, workflows, architecture, motion, and local-development guides. The screen guide also
+  records the latest local emulator audit.
 - [`public/showcase/`](public/showcase/) contains the selected Android screen captures.
 - [`showcase-inventory/`](showcase-inventory/) contains the review ledger for those captures.
 
@@ -100,7 +101,9 @@ implementation or test evidence in the Android repository.
 ## Contributing
 
 Use a real product capture for every showcase image. Keep alt text and captions specific to the
-visible destination, theme, paper, and loading or error state when relevant. Do not turn a placeholder
+visible destination, theme, paper, and loading or error state when relevant. The
+`emulator-*.png` set is from the API 36 `emulator-5554` smoke run on 2026-09-07; it is intentionally
+documented as runtime evidence rather than a theme-paired landing capture. Do not turn a placeholder
 or a mock into a product claim.
 
 Keep Light and Dark capture pairs synchronized with the theme mapping in
@@ -130,6 +133,7 @@ src/layouts/                Landing-page document shell
 src/styles/                 Landing and documentation styles
 src/scripts/                Theme and motion helpers
 public/showcase/            Selected Android captures
+public/showcase/emulator-*.png  Latest local emulator audit captures
 showcase-inventory/         Reviewed capture inventory
 ```
 
