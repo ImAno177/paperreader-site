@@ -44,11 +44,16 @@ artifact instead of trusting a user-editable export.
 
 ## HTML and figure assets
 
-The verified HTML path downloads the document body and same-document figures through separate lanes.
-The body stores opaque local asset references; the asset lane fetches, validates, hashes, and stores
-each raster or allowlisted SVG independently. The current path has no figure-count cap. Each asset is
-still bounded to 8 MiB, SVG complexity is checked, the asset metadata manifest is capped at 256 KiB,
-and cache quotas limit total retained data.
+The verified HTML path asks the trusted arXiv source extension for an exact-version, sanitized
+document. The source owns structural parsing and returns the UTF-8 body in bounded Binder chunks
+under the readable_document capability. The host verifies request identity, hashes, metadata, and
+HTML safety before publication.
+
+The document body and same-document figures then travel through separate lanes. The body stores opaque
+local asset references; the host asset lane fetches, validates, hashes, and stores each raster or
+allowlisted SVG independently. The current path has no figure-count cap. Each asset is still bounded
+to 8 MiB, SVG complexity is checked, the asset metadata manifest is capped at 256 KiB, and cache
+quotas limit total retained data.
 
 Asset requests run in small concurrent batches and use bounded retry and backoff for transient rate
 limits or unavailable responses. A persistent failure leaves the figure caption and a visible

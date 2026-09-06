@@ -5,6 +5,8 @@ description: Current Android screens, visible controls, states, and normal next 
 
 This guide pairs current Android captures with the behavior documented by the host contract. Each
 image shows one visible state. The text explains what the screen owns and what the user can do next.
+The local emulator audit below is marked explicitly so runtime evidence is not confused with a
+concept render.
 
 Status: implemented screen guide for the current Android host. An image cannot prove an unseen network
 request, saved file, or completed background task.
@@ -44,6 +46,22 @@ request, saved file, or completed background task.
 <div class="docs-screen-pair">
   <img src="../../showcase/sources-error-light.png" width="1080" height="2400" loading="lazy" alt="PaperReader Sources in Light mode showing unavailable provider states">
   <img src="../../showcase/sources-error-dark.png" width="1080" height="2400" loading="lazy" alt="PaperReader Sources in Dark mode showing unavailable provider states">
+</div>
+
+### Local emulator audit
+
+These captures were taken from the local API 36 emulator (`emulator-5554`) on 2026-09-07 after the
+readable-document and Download queue smoke run. The run exercised real search, PDF download state,
+provider-backed HTML, and app-private asset caching.
+
+<div class="docs-screen-pair">
+  <img src="../../showcase/emulator-library.png" width="1080" height="2400" loading="lazy" alt="Local emulator Library with six saved papers and reading-status counts">
+  <img src="../../showcase/emulator-search-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator Search results for Attention">
+  <img src="../../showcase/emulator-more.png" width="1080" height="2400" loading="lazy" alt="Local emulator More hub with grouped PaperReader settings">
+  <img src="../../showcase/emulator-download-queue.png" width="1080" height="2400" loading="lazy" alt="Local emulator Download queue showing completed PDF tasks">
+  <img src="../../showcase/emulator-download-active.png" width="1080" height="2400" loading="lazy" alt="Local emulator Paper Detail showing a live PDF download percentage">
+  <img src="../../showcase/emulator-reader-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator readable Attention paper at the top of the document">
+  <img src="../../showcase/emulator-reader-cgp.png" width="1080" height="2400" loading="lazy" alt="Local emulator readable CGP-Tuning paper with normalized-content warning">
 </div>
 
 ## Root navigation
@@ -134,8 +152,10 @@ disabled until the renderer has a stable selection and source-map contract.
 
 ## Updates and History
 
-Updates groups saved-search checks and persisted download work. A task can be queued, running,
-cancelled, failed, completed, retried, or removed. History shows last-read time and reading duration.
+Updates groups saved-search checks and persisted download work. The dedicated Download queue branch
+groups active, attention, and completed tasks, keeps a visible back action, and shows aggregate and
+per-task progress. A task can be queued, running, cancelled, failed, completed, retried, or removed.
+History shows last-read time and reading duration.
 Removing a History entry does not remove the saved paper.
 
 ## More branches
@@ -148,6 +168,7 @@ Removing a History entry does not remove the saved paper.
 | Background updates | Opt-in saved-search refresh and notifications | Checks are network-constrained and can be disabled without deleting searches |
 | Backup | Export or restore metadata | Restore previews counts and excludes PDFs, caches, credentials, and extension APKs |
 | Sources | Install, update, enable, disable, or inspect extensions | Signed metadata and PackageInstaller confirmation are required |
+| Download queue | Inspect active, failed, and completed file work | Aggregate progress and per-task actions stay available from a dedicated branch |
 | About | Product and license information | This screen does not change Library data |
 
 ## States outside the gallery

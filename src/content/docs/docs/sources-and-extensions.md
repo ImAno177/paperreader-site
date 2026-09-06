@@ -16,7 +16,7 @@ separate repository.
 
 | Kind | Supplies | Host boundary |
 | --- | --- | --- |
-| Source | Search, exact lookup, metadata, and paper manifestations | Separate package and UID over versioned bounded AIDL |
+| Source | Search, exact lookup, metadata, paper manifestations, and optional readable documents | Separate package and UID over versioned bounded AIDL |
 | Theme | Declarative palettes, typography, shapes, decorations, and semantic icons | Host-owned rendering of validated data |
 
 Source and theme extensions are not interchangeable. Disabling a source controls discovery participation;
@@ -32,6 +32,12 @@ than host database objects.
 
 Official source roles currently cover Semantic Scholar, Crossref, arXiv, and Europe PMC. The provider
 model and routing policy are described in [Discovery and search](../discovery/).
+
+The arXiv source advertises readable_document for exact-version HTML. It sanitizes the document
+inside the source process, streams its body through request-correlated Binder chunks, and returns
+validated section, warning, and asset metadata. The host performs a final safety check and fetches
+same-document assets independently, so a missing figure preserves its caption instead of making the
+whole paper unreadable.
 
 ## What a theme declares
 
