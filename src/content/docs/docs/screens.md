@@ -58,7 +58,8 @@ Neobrutalism preset and shows the five additional PaperReader color choices in A
 <div class="docs-screen-pair">
   <img src="../../showcase/release-2026-09-07-library.png" width="1080" height="2400" loading="lazy" alt="Local emulator Library with two saved papers and reading-status counts">
   <img src="../../showcase/release-2026-09-07-search-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator Search results for Attention">
-  <img src="../../showcase/release-2026-09-07-more.png" width="1080" height="2400" loading="lazy" alt="Local emulator More hub with grouped PaperReader settings">
+  <img src="../../showcase/release-2026-09-07-more.png" width="1080" height="2400" loading="lazy" alt="Local emulator More hub with the compact PaperReader workspace layout">
+  <img src="../../showcase/release-2026-09-07-stats.png" width="1080" height="2400" loading="lazy" alt="Local emulator Stats with reading time and grouped metrics">
   <img src="../../showcase/release-2026-09-07-appearance.png" width="1080" height="2400" loading="lazy" alt="Local emulator Appearance with Neobrutalism and five built-in color themes">
   <img src="../../showcase/release-2026-09-07-queue.png" width="1080" height="2400" loading="lazy" alt="Local emulator Download queue showing completed PDF tasks">
   <img src="../../showcase/release-2026-09-07-detail-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator Attention Paper Detail with download and read actions">

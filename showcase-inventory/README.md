@@ -34,6 +34,7 @@ describe the visible state, not a concept render.
 | `../public/showcase/emulator-library.png` | Local API 36 emulator Library with six saved papers and status counts | Docs |
 | `../public/showcase/emulator-search-attention.png` | Local emulator Search results for Attention | Docs |
 | `../public/showcase/emulator-more.png` | Local emulator More hub with grouped settings | Docs |
+| `../public/showcase/release-2026-09-07-stats.png` | Local emulator Stats hub with reading time and grouped metrics | Docs |
 | `../public/showcase/emulator-download-queue.png` | Local emulator queue with completed PDF task rows | Docs |
 | `../public/showcase/emulator-download-active.png` | Local emulator Paper Detail with a live download percentage | Docs |
 | `../public/showcase/emulator-reader-attention.png` | Local emulator cached Attention reader | Docs |
