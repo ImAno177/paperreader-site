@@ -55,7 +55,7 @@ readable-document and Download queue smoke run. The run exercised real search, P
 provider-backed HTML, and app-private asset caching.
 
 <div class="docs-screen-pair">
-  <img src="../../showcase/emulator-library.png" width="1080" height="2400" loading="lazy" alt="Local emulator Library with six saved papers and reading-status counts">
+  <img src="../../showcase/emulator-library.png" width="1080" height="2400" loading="lazy" alt="Local emulator Library with two saved papers and reading-status counts">
   <img src="../../showcase/emulator-search-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator Search results for Attention">
   <img src="../../showcase/emulator-more.png" width="1080" height="2400" loading="lazy" alt="Local emulator More hub with grouped PaperReader settings">
   <img src="../../showcase/emulator-download-queue.png" width="1080" height="2400" loading="lazy" alt="Local emulator Download queue showing completed PDF tasks">
