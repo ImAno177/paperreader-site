@@ -52,17 +52,24 @@ request, saved file, or completed background task.
 
 These captures were taken from the local API 36 emulator (`emulator-5554`) on 2026-09-07 after the
 readable-document and Download queue smoke run. The run exercised real search, PDF download state,
-provider-backed HTML, and app-private asset caching.
+provider-backed HTML, and app-private asset caching. The final capture uses the unchanged
+Neobrutalism preset and shows the five additional PaperReader color choices in Appearance.
 
 <div class="docs-screen-pair">
-  <img src="../../showcase/emulator-library.png" width="1080" height="2400" loading="lazy" alt="Local emulator Library with two saved papers and reading-status counts">
-  <img src="../../showcase/emulator-search-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator Search results for Attention">
-  <img src="../../showcase/emulator-more.png" width="1080" height="2400" loading="lazy" alt="Local emulator More hub with grouped PaperReader settings">
-  <img src="../../showcase/emulator-download-queue.png" width="1080" height="2400" loading="lazy" alt="Local emulator Download queue showing completed PDF tasks">
-  <img src="../../showcase/emulator-download-active.png" width="1080" height="2400" loading="lazy" alt="Local emulator Paper Detail showing a live PDF download percentage">
-  <img src="../../showcase/emulator-reader-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator readable Attention paper at the top of the document">
-  <img src="../../showcase/emulator-reader-cgp.png" width="1080" height="2400" loading="lazy" alt="Local emulator readable CGP-Tuning paper with normalized-content warning">
+  <img src="../../showcase/release-2026-09-07-library.png" width="1080" height="2400" loading="lazy" alt="Local emulator Library with two saved papers and reading-status counts">
+  <img src="../../showcase/release-2026-09-07-search-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator Search results for Attention">
+  <img src="../../showcase/release-2026-09-07-more.png" width="1080" height="2400" loading="lazy" alt="Local emulator More hub with grouped PaperReader settings">
+  <img src="../../showcase/release-2026-09-07-appearance.png" width="1080" height="2400" loading="lazy" alt="Local emulator Appearance with Neobrutalism and five built-in color themes">
+  <img src="../../showcase/release-2026-09-07-queue.png" width="1080" height="2400" loading="lazy" alt="Local emulator Download queue showing completed PDF tasks">
+  <img src="../../showcase/release-2026-09-07-detail-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator Attention Paper Detail with download and read actions">
+  <img src="../../showcase/release-2026-09-07-reader-attention.png" width="1080" height="2400" loading="lazy" alt="Local emulator readable Attention paper with a visible figure and caption">
+  <img src="../../showcase/release-2026-09-07-reader-cgp.png" width="1080" height="2400" loading="lazy" alt="Local emulator readable CGP-Tuning paper with a visible figure and caption">
 </div>
+
+The local app connected run executed 85 app cases: all functional assertions passed, while one
+`ActivityScenarioRule` teardown reported that the activity did not reach `DESTROYED` after share
+redelivery. This harness-only result is recorded in the [testing guide](/paperreader-site/docs/testing/)
+and was not hidden by adding a GitHub-only test.
 
 ## Root navigation
 
