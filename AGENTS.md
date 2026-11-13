@@ -11,10 +11,6 @@ This file lists only rules specific to this Astro site.
 - Before opening a pull request, `BASE_PATH=/paperreader-site pnpm build` must pass. In PowerShell,
   set `$env:BASE_PATH = '/paperreader-site'` first.
 
-## Links and paths
-
-- Links and image paths must work under `/paperreader-site/`. Check every changed link with `pnpm preview`.
-
 ## Screenshots
 
 - Every showcase image must be a real capture from the Android app. Do not use mockups or placeholders.
@@ -29,4 +25,5 @@ This file lists only rules specific to this Astro site.
 - Verify product claims against the PaperReader product specification. The Android repository is the
   source of truth.
 - Extend the nearest existing docs page before adding a route.
+- Links and image paths must work under `/paperreader-site/`. Check changed links with `pnpm preview`.
 - Never commit `.agents/scratch/`. It is gitignored.
